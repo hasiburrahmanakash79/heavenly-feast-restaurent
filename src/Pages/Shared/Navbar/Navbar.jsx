@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
   const NavItems = (
@@ -27,11 +27,11 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar fixed z-10 max-w-screen-2xl mx-auto bg-opacity-30 bg-black font-semibold text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              #
+              <FaBars/>
             </label>
             <ul
               tabIndex={0}
