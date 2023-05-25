@@ -17,14 +17,15 @@ import slider8 from "../../../assets/home/slide8.jpg";
 import slider9 from "../../../assets/home/slide9.jpg";
 
 import banner from "../../../assets/home/chef-service.jpg";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const OnlineService = () => {
   return (
-    <div className="mb-10">
-      <div className="text-center my-7">
-        <p className="text-yellow-500">---From 11:00am to 10:00pm---</p>
-        <h2 className="text-3xl font-semibold">ORDER ONLINE</h2>
-      </div>
+    <section className="mb-10">
+      <SectionTitle
+        subTitle={"From 11:00am to 10:00pm"}
+        title={"Order Online"}
+      ></SectionTitle>
       <Swiper
         slidesPerView={5}
         spaceBetween={30}
@@ -37,49 +38,49 @@ const OnlineService = () => {
       >
         <SwiperSlide>
           <img src={slider1} alt="" />
-          <h1 className="text-center text-3xl font-semibold text-white -mt-16">
+          <h1 className="text-center text-lg md:text-3xl font-semibold text-white -mt-8 md:-mt-16">
             Salads
           </h1>
         </SwiperSlide>
         <SwiperSlide>
           <img src={slider2} alt="" />
-          <h1 className="text-center text-3xl font-semibold text-white -mt-16">
+          <h1 className="text-center text-lg md:text-3xl font-semibold text-white -mt-8 md:-mt-16">
             Pizza
           </h1>
         </SwiperSlide>
         <SwiperSlide>
           <img src={slider3} alt="" />
-          <h1 className="text-center text-3xl font-semibold text-white -mt-16">
+          <h1 className="text-center text-lg md:text-3xl font-semibold text-white -mt-8 md:-mt-16">
             Soup
           </h1>
         </SwiperSlide>
         <SwiperSlide>
           <img src={slider4} alt="" />
-          <h1 className="text-center text-3xl font-semibold text-white -mt-16">
+          <h1 className="text-center text-lg md:text-3xl font-semibold text-white -mt-8 md:-mt-16">
             Cake
           </h1>
         </SwiperSlide>
         <SwiperSlide>
           <img src={slider5} alt="" />
-          <h1 className="text-center text-3xl font-semibold text-white -mt-16">
+          <h1 className="text-center text-lg md:text-3xl font-semibold text-white -mt-8 md:-mt-16">
             Beef
           </h1>
         </SwiperSlide>
         <SwiperSlide>
           <img src={slider6} alt="" />
-          <h1 className="text-center text-3xl font-semibold text-white -mt-16">
+          <h1 className="text-center text-lg md:text-3xl font-semibold text-white -mt-8 md:-mt-16">
             Thai Soup
           </h1>
         </SwiperSlide>
         <SwiperSlide>
           <img src={slider7} alt="" />
-          <h1 className="text-center text-3xl font-semibold text-white -mt-16">
+          <h1 className="text-center text-lg md:text-3xl font-semibold text-white -mt-8 md:-mt-16">
             Chicken
           </h1>
         </SwiperSlide>
         <SwiperSlide>
           <img src={slider8} alt="" />
-          <h1 className="text-center text-3xl font-semibold text-white -mt-16">
+          <h1 className="text-center text-lg md:text-3xl font-semibold text-white -mt-8 md:-mt-16">
             Burger
           </h1>
         </SwiperSlide>
@@ -104,7 +105,7 @@ const OnlineService = () => {
           </p>
         </div> */}
       </div>
-    </div>
+    </section>
   );
 };
 
