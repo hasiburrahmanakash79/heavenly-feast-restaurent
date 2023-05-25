@@ -16,7 +16,7 @@ import slider7 from "../../../assets/home/slide7.jpg";
 import slider8 from "../../../assets/home/slide8.jpg";
 import slider9 from "../../../assets/home/slide9.jpg";
 
-import banner from "../../../assets/home/chef-service.jpg";
+// import banner from "../../../assets/home/chef-service.jpg";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const OnlineService = () => {
@@ -89,12 +89,9 @@ const OnlineService = () => {
         </SwiperSlide>
       </Swiper>
 
-      <div className="my-20">
-        <div className="relative w-full">
-          <img src={banner} alt="" />
-        </div>
-        {/* <div className="text-center bg-white p-10 w-3/4 mx-auto absolute rounded-xl items-center left-0 right-0">
-          <h1 className="text-4xl">Heavenly feast</h1>
+      <div className="bg-[url('https://i.ibb.co/VvJCvLr/chef-service.jpg')] p-20 my-20">
+        <div className="text-center bg-white p-10 md:w-3/4 mx-auto">
+          <h1 className="text-4xl mb-5">Heavenly feast</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore
             nam eveniet adipisci! Voluptatum aliquid excepturi deleniti
@@ -103,7 +100,7 @@ const OnlineService = () => {
             dicta id doloremque dolore omnis officiis cupiditate repellat.
             Adipisci, ad accusamus tenetur ea molestiae aliquam et eum.
           </p>
-        </div> */}
+        </div>
       </div>
     </section>
   );
