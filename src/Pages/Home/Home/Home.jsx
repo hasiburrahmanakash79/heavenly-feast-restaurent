@@ -2,6 +2,7 @@ import Banner from "../Banner/Banner";
 import Feature from "../Feature/Feature";
 import Menu from "../Menu/Menu";
 import OnlineService from "../OnlineService/OnlineService";
+import Reviews from "../Reviews/Reviews";
 
 const Home = () => {
     return (
@@ -9,7 +10,8 @@ const Home = () => {
             <Banner></Banner> 
             <OnlineService></OnlineService>  
             <Menu></Menu>
-            <Feature></Feature>        
+            <Feature></Feature>    
+            <Reviews></Reviews>    
         </div>
     );
 };
