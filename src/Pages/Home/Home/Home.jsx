@@ -1,15 +1,17 @@
+import UseTitle from "../../../Hook/UseTitle";
 import Banner from "../Banner/Banner";
+import FavoriteMenu from "../FavoriteMenu/FavoriteMenu";
 import Feature from "../Feature/Feature";
-import Menu from "../Menu/Menu";
 import OnlineService from "../OnlineService/OnlineService";
 import Reviews from "../Reviews/Reviews";
 
 const Home = () => {
+    UseTitle('Home')
     return (
         <div>
             <Banner></Banner> 
             <OnlineService></OnlineService>  
-            <Menu></Menu>
+            <FavoriteMenu></FavoriteMenu>
             <Feature></Feature>    
             <Reviews></Reviews>    
         </div>

@@ -5,22 +5,22 @@ const Navbar = () => {
   const NavItems = (
     <>
       <li>
-        <Link>Home</Link>
+        <Link to='/'>Home</Link>
       </li>
       <li>
-        <Link>Contact us</Link>
+        <Link to='/contact'>Contact us</Link>
       </li>
       <li>
-        <Link>Dashboard</Link>
+        <Link to='/dashboard'>Dashboard</Link>
       </li>
       <li>
-        <Link>Our menu</Link>
+        <Link to='/menu'>Our menu</Link>
       </li>
       <li>
-        <Link>Our shop</Link>
+        <Link to='/shop'>Our shop</Link>
       </li>
       <li>
-        <Link>Login</Link>
+        <Link to='/login'>Login</Link>
       </li>
     </>
   );
