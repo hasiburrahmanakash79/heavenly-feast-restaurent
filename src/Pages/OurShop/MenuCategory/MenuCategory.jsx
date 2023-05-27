@@ -22,35 +22,35 @@ const MenuCategory = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid md:grid-cols-4 gap-3">
             {salads.map((item) => (
               <FoodDetailsCard key={item._id} item={item}></FoodDetailsCard>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid md:grid-cols-4 gap-3">
             {pizza.map((item) => (
               <FoodDetailsCard key={item._id} item={item}></FoodDetailsCard>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid md:grid-cols-4 gap-3">
             {soups.map((item) => (
               <FoodDetailsCard key={item._id} item={item}></FoodDetailsCard>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid md:grid-cols-4 gap-3">
             {desserts.map((item) => (
               <FoodDetailsCard key={item._id} item={item}></FoodDetailsCard>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid md:grid-cols-4 gap-3">
             {drinks.map((item) => (
               <FoodDetailsCard key={item._id} item={item}></FoodDetailsCard>
             ))}
