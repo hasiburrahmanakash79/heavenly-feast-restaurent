@@ -1,5 +1,5 @@
-const SingleMenu = ({ popular }) => {
-  const { image, name, price, recipe } = popular;
+const SingleMenu = ({ item }) => {
+  const { image, name, price, recipe } = item;
   return (
     <div className="flex justify-between gap-5 mb-5">
       <img src={image} className="w-[110px]" style={{borderRadius: '0px 200px 200px 200px'}} alt="" />
