@@ -1,18 +1,11 @@
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
-import { useEffect, useState } from "react";
 import SingleMenu from "./SingleMenu";
+import useMenu from "../../../Hook/useMenu";
 
 const FavoriteMenu = () => {
-  const [foods, setFoods] = useState([]);
-  useEffect(() => {
-    fetch("menu.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const popularMenu = data.filter((menu) => menu.category === "popular");
-        setFoods(popularMenu);
-        console.log(popularMenu);
-      });
-  }, []);
+
+  const [menu] = useMenu()
+  const popularItem = menu.filter(item => item.category === 'popular') 
 
   return (
     <section>
@@ -21,8 +14,8 @@ const FavoriteMenu = () => {
         subTitle={"Check it out"}
       ></SectionTitle>
       <div className="md:grid grid-cols-2 gap-5 my-5 px-2">
-        {foods.map((food) => (
-          <SingleMenu key={food._id} food={food}></SingleMenu>
+        {popularItem.map((popular) => (
+          <SingleMenu key={popular._id} popular={popular}></SingleMenu>
         ))}
       </div>
       <div className="mt-10 flex flex-col justify-center items-center">
