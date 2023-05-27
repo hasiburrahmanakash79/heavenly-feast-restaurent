@@ -2,14 +2,14 @@ import useMenu from "../../../Hook/useMenu";
 import SingleMenu from "../../../components/SingleMenu/SingleMenu";
 import SectionCover from "../../Shared/SectionCover/SectionCover";
 
-const Pizza = () => {
-  const [menu] = useMenu();
-  const offerMenu = menu.filter((offer) => offer.category === "pizza");
+const Salad = () => {
+    const [menu] = useMenu();
+  const offerMenu = menu.filter((offer) => offer.category === "salad");
   return (
     <div>
-      <div className="bg-[url('https://i.ibb.co/SQ0j2dF/pizza-bg.jpg')] p-16 my-10">
+      <div className="bg-[url('https://i.ibb.co/z4DhhNf/salad-bg.jpg')] p-16 my-10">
         <SectionCover
-          title={"Pizza"}
+          title={"Salads"}
           subTitle={
             "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
           }
@@ -29,4 +29,4 @@ const Pizza = () => {
   );
 };
 
-export default Pizza;
+export default Salad;
