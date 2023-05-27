@@ -1,6 +1,7 @@
 import UseTitle from "../../../Hook/UseTitle";
 import Desserts from "../Desserts/Desserts";
 import MenuBanner from "../MenuBanner/MenuBanner";
+import Pizza from "../Pizza/Pizza";
 import TodayOffer from "../TodayOffer/TodayOffer";
 
 const Menu = () => {
@@ -10,6 +11,7 @@ const Menu = () => {
       <MenuBanner></MenuBanner>
       <TodayOffer></TodayOffer>
       <Desserts></Desserts>
+      <Pizza></Pizza>
     </div>
   );
 };
