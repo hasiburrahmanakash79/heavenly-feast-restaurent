@@ -3,6 +3,7 @@ import Desserts from "../Desserts/Desserts";
 import MenuBanner from "../MenuBanner/MenuBanner";
 import Pizza from "../Pizza/Pizza";
 import Salad from "../Salad/Salad";
+import Soups from "../Soups/Soups";
 import TodayOffer from "../TodayOffer/TodayOffer";
 
 const Menu = () => {
@@ -14,6 +15,7 @@ const Menu = () => {
       <Desserts></Desserts>
       <Pizza></Pizza>
       <Salad></Salad>
+      <Soups></Soups>
     </div>
   );
 };
