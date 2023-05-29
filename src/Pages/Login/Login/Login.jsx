@@ -5,37 +5,35 @@ import {
   validateCaptcha,
 } from "react-simple-captcha";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { AuthContext } from "../../Provider/AuthProvider";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 import UseTitle from "../../../Hook/UseTitle";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Login = () => {
-  const captchaRef = useRef(null)
-  const [disabled, setDisabled] = useState(true)
+  const captchaRef = useRef(null);
+  const [disabled, setDisabled] = useState(true);
   const [passShow, setPassShow] = useState(false);
   UseTitle("login");
 
   useEffect(() => {
-    loadCaptchaEnginge(6); 
-  },[])
+    loadCaptchaEnginge(6);
+  }, []);
 
-  const verifyCaptcha = () =>{
-    const valueCaptcha = captchaRef.current.value
-    if(validateCaptcha(valueCaptcha)){
-      setDisabled(false)
+  const verifyCaptcha = () => {
+    const valueCaptcha = captchaRef.current.value;
+    if (validateCaptcha(valueCaptcha)) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
     }
-    else{
-      setDisabled(true)
-      
-    }
-  }
+  };
 
-  // const { logInUser, googleLogin } = useContext(AuthContext);
+  const { logInUser } = useContext(AuthContext);
 
-  // const navigate = useNavigate();
-  // const location = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  // const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || "/";
 
   // googleLogin
   // const handleGoogleLogin = () =>{
@@ -54,22 +52,21 @@ const Login = () => {
     const password = form.password.value;
     console.log(email, password);
 
-    // logInUser(email, password)
-    //   .then((result) => {
-    //     const loggedUser = result.user;
-    //     console.log(loggedUser);
-    //     navigate(from, {replace: true});
-    //     Swal.fire({
-    //       showConfirmButton: false,
-    //       timer: 1000,
-    //       title: "Login Successful",
-    //       icon: "success",
-    //     });
-    //     form.reset();
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    logInUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+        Swal.fire({
+          showConfirmButton: false,
+          timer: 2000,
+          title: "Login Successful",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className="hero min-h-screen">
@@ -133,11 +130,18 @@ const Login = () => {
                   className="input input-bordered my-3"
                   required
                 />
-                <button onClick={verifyCaptcha} className="btn btn-outline btn-xs">Verify</button>
+                <button
+                  onClick={verifyCaptcha}
+                  className="btn btn-outline btn-xs"
+                >
+                  Verify
+                </button>
               </div>
             </div>
             <div className="form-control mt-1">
-              <button disabled={disabled} className="btn btn-warning">Login</button>
+              <button disabled={disabled} className="btn btn-warning">
+                Login
+              </button>
             </div>
           </form>
           <div className="text-center mb-7">

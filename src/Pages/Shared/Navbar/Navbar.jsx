@@ -1,27 +1,50 @@
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+      .then(
+        Swal.fire({
+          icon: "success",
+          title: "Log Out Successful",
+          showConfirmButton: false,
+          timer: 1500,
+        })
+      )
+      .catch((error) => console.log(error));
+  };
   const NavItems = (
     <>
       <li>
-        <Link to='/'>Home</Link>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to='/contact'>Contact us</Link>
+        <Link to="/contact">Contact us</Link>
       </li>
       <li>
-        <Link to='/dashboard'>Dashboard</Link>
+        <Link to="/dashboard">Dashboard</Link>
       </li>
       <li>
-        <Link to='/menu'>Our menu</Link>
+        <Link to="/menu">Our menu</Link>
       </li>
       <li>
-        <Link to='/shop'>Our shop</Link>
+        <Link to="/shop">Our shop</Link>
       </li>
-      <li>
-        <Link to='/login'>Login</Link>
-      </li>
+      {user ? (
+        <button onClick={handleLogout} className="btn btn-warning btn-outline">
+          logout
+        </button>
+      ) : (
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+      )}
     </>
   );
 
@@ -31,23 +54,20 @@ const Navbar = () => {
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <FaBars/>
+              <FaBars />
             </label>
             <ul
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow text-black bg-base-100 rounded-box w-52"
             >
-                {NavItems}
+              {NavItems}
             </ul>
           </div>
           <a className="btn btn-ghost normal-case text-xl">Heavenly feast</a>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            {NavItems}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{NavItems}</ul>
         </div>
-        
       </div>
     </div>
   );

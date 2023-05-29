@@ -1,45 +1,40 @@
-// import { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { AuthContext } from "../../Provider/AuthProvider";
-// import Swal from "sweetalert2";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
-  // const [error, setError] = useState('')
-  // const navigate = useNavigate();
-  // const location = useLocation();
-  // const from = location.state?.from?.pathname || "/";
+  const [error, setError] = useState('')
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
-  // const {createUser, updateUserInfo} = useContext(AuthContext)
+  const {signUpUser} = useContext(AuthContext)
 
-  // const handleSignUp = (event) =>{
-  //   event.preventDefault()
-  //   const form = event.target;
-  //   const name = form.name.value;
-  //   const email = form.email.value;
-  //   const password = form.password.value;
-  //   const photo = form.photo.value;
-  //   console.log(name, email, password, photo);
+  const handleSignUp = (event) =>{
+    event.preventDefault()
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value;
+    console.log(name, email, password, photo);
 
-  //   createUser(email, password)
-  //   .then(result =>{
-  //     const loggedUser = result.user
-  //     console.log(loggedUser);
-  //     Swal.fire(
-  //       'Registration in Successful',
-  //       'Welcome to our robotWorld',
-  //       'success'
-  //     )
-  //     updateUserInfo(name, photo)
-  //         .then((getImage) => {
-  //           const currentUser = result.user;
-  //           console.log(getImage, currentUser);
-  //           navigate(from, { replace: true });
-  //         })
-  //         .catch((error) => setError(error.message));
-  //     form.reset()
-  //   })
-  //   .catch(error => setError(error.message))
-  // }
+    signUpUser(email, password)
+    .then(result =>{
+      const loggedUser = result.user
+      navigate(from, { replace: true });
+      console.log(loggedUser);
+      Swal.fire({
+        showConfirmButton: false,
+        timer: 2000,
+        title: "Login Successful",
+        icon: "success",
+      });
+      form.reset()
+    })
+    .catch(error => setError(error.message))
+  }
 
   return (
     <div className="hero min-h-screen">
@@ -52,7 +47,7 @@ const SignUp = () => {
           <h1 className="text-3xl my-5 font-bold">SignUp</h1>
           <img className="w-16 mx-auto" src="https://i.ibb.co/NNQM1N7/image.png" alt="" />
           </div>
-          <form className="card-body">
+          <form onSubmit={handleSignUp} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
@@ -104,7 +99,7 @@ const SignUp = () => {
             <div className="form-control mt-1">
               <button className="btn btn-warning">Sign Up</button>
             </div>
-            <p className="text-red-600">Erroe</p>
+            <p className="text-red-600">{error}</p>
           </form>
           <div className="text-center mb-7">
             <Link to="/login">
