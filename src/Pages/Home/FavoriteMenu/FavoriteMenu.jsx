@@ -1,6 +1,8 @@
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import SingleMenu from "../../../components/SingleMenu/SingleMenu";
 import useMenu from "../../../Hook/useMenu";
+import { Link } from "react-router-dom";
+
 
 const FavoriteMenu = () => {
   const [menu] = useMenu();
@@ -20,9 +22,11 @@ const FavoriteMenu = () => {
       </div>
 
       <div className="mt-10 flex flex-col justify-center items-center">
-        <button className="btn btn-outline border-0 border-b-4 mb-7 ">
-          View more Items
-        </button>
+        <Link to='/menu'>
+          <button className="btn btn-outline border-0 border-b-4 mb-7 ">
+            View more Items
+          </button>
+        </Link>
         <div className="bg-black h-52 w-full flex items-center justify-center">
           <h2 className="text-5xl text-center text-white">
             Call Us: +088 01722-545468
