@@ -2,8 +2,11 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import UseTitle from "../../../Hook/UseTitle";
 
 const SignUp = () => {
+  UseTitle("SignUp");
+
   const [error, setError] = useState('')
   const navigate = useNavigate();
   const location = useLocation();

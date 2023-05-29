@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
@@ -10,17 +10,17 @@ import UseTitle from "../../../Hook/UseTitle";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Login = () => {
-  const captchaRef = useRef(null);
+  UseTitle("Login");
+  // const captchaRef = useRef(null);
   const [disabled, setDisabled] = useState(true);
   const [passShow, setPassShow] = useState(false);
-  UseTitle("login");
 
   useEffect(() => {
     loadCaptchaEnginge(6);
   }, []);
 
-  const verifyCaptcha = () => {
-    const valueCaptcha = captchaRef.current.value;
+  const verifyCaptcha = (event) => {
+    const valueCaptcha = event.target.value;
     if (validateCaptcha(valueCaptcha)) {
       setDisabled(false);
     } else {
@@ -124,18 +124,18 @@ const Login = () => {
                 <LoadCanvasTemplate />
                 <input
                   type="captcha"
+                  onBlur={verifyCaptcha}
                   name="captcha"
-                  ref={captchaRef}
                   placeholder="Enter your captcha"
                   className="input input-bordered my-3"
                   required
                 />
-                <button
+                {/* <button
                   onClick={verifyCaptcha}
                   className="btn btn-outline btn-xs"
                 >
                   Verify
-                </button>
+                </button> */}
               </div>
             </div>
             <div className="form-control mt-1">
