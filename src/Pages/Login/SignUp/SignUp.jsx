@@ -12,7 +12,7 @@ const SignUp = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  const {signUpUser} = useContext(AuthContext)
+  const {signUpUser, updateUserInfo} = useContext(AuthContext)
 
   const handleSignUp = (event) =>{
     event.preventDefault()
@@ -34,6 +34,13 @@ const SignUp = () => {
         title: "Login Successful",
         icon: "success",
       });
+      updateUserInfo(name, photo)
+          .then((getImage) => {
+            const currentUser = result.user;
+            console.log(getImage, currentUser);
+            navigate(from, { replace: true });
+          })
+          .catch((error) => setError(error.message));
       form.reset()
     })
     .catch(error => setError(error.message))

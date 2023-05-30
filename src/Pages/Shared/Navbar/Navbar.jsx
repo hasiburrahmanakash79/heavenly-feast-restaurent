@@ -68,6 +68,37 @@ const Navbar = () => {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{NavItems}</ul>
         </div>
+        <div className="navbar-end">
+        {user ? (
+          <div className="dropdown dropdown-end">
+            <div className="tooltip tooltip-left" data-tip={user?.displayName}>
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src={user.photoURL} />
+                </div>
+              </label>
+            </div>
+
+            <ul
+              tabIndex={0}
+              className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <Link className="justify-between">{user?.displayName}</Link>
+              </li>
+              <li>
+                <Link onClick={handleLogout}>Log Out</Link>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Link to="/login">
+            <Link to="/login" className="btn btn-warning">
+              Login
+            </Link>
+          </Link>
+        )}
+      </div>
       </div>
     </div>
   );
