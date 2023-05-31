@@ -7,47 +7,46 @@ const FoodDetailsCard = ({ item }) => {
   const { image, name, price, recipe, _id } = item;
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
 
   const handleAddToCart = (item) => {
     console.log(item);
-    if(user && user.email){
-      const cartItem = {image, name, price, recipe, email: user.email , _id}
-      fetch('http://localhost:5000/carts',{
+    if (user && user.email) {
+      const cartItem = { image, name, price, recipe, email: user.email, _id };
+      fetch("http://localhost:5000/carts", {
         method: "POST",
         headers: {
-          'content-type' : 'application/json'
+          "content-type": "application/json",
         },
-        body: JSON.stringify(cartItem)
+        body: JSON.stringify(cartItem),
       })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        if(data.insertedId){
-          Swal.fire({
-            icon: 'success',
-            title: 'Item has been added.',
-            showConfirmButton: false,
-            timer: 1500
-          })
-        }
-      })
-    }
-    else{
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.insertedId) {
+            Swal.fire({
+              icon: "success",
+              title: "Item has been added.",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+    } else {
       Swal.fire({
-        title: 'If you want to add food you net to login?',
-        icon: 'warning',
+        title: "If you want to add food you net to login?",
+        icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Login Now!'
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Login Now!",
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate('/login', {state: {from: location}})
+          navigate("/login", { state: { from: location } });
         }
-      })
+      });
     }
-  }
+  };
 
   return (
     <div className="p-1">
@@ -62,7 +61,10 @@ const FoodDetailsCard = ({ item }) => {
           <h2 className="card-title">{name}</h2>
           <p>{recipe}</p>
           <div className="card-actions">
-            <button onClick={() => handleAddToCart(item)} className="btn btn-outline bg-slate-100 border-0 border-b-4">
+            <button
+              onClick={() => handleAddToCart(item)}
+              className="btn btn-outline bg-slate-100 border-0 border-b-4"
+            >
               Add to Cart
             </button>
           </div>
