@@ -5,7 +5,7 @@ import Menu from "../Pages/Menu/Menu/Menu";
 import OurShop from "../Pages/OurShop/OurShop/OurShop";
 import Login from "../Pages/Login/Login/Login";
 import SignUp from "../Pages/Login/SignUp/SignUp";
-import PrivateRoute from "./PrivateRoute";
+import AddToCart from "../Pages/AddToCart/AddToCart";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +22,11 @@ const router = createBrowserRouter([
         },
         {
           path: '/shop',
-          element: <PrivateRoute><OurShop></OurShop></PrivateRoute>
+          element: <OurShop></OurShop>
+        },
+        {
+          path: '/addToCart',
+          element: <AddToCart></AddToCart>
         }
     ]
   },
