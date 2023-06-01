@@ -3,9 +3,11 @@ import { FaBars, FaShoppingCart } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useCart from "../../../Hook/useCart";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [cart] = useCart()
 
   const handleLogout = () => {
     logOut()
@@ -39,7 +41,7 @@ const Navbar = () => {
       <li>
         <Link to="/addToCart">
           <FaShoppingCart className="text-white"></FaShoppingCart>
-          <p className="badge">+0</p>
+          <p className="badge">+{cart?.length || 0}</p>
         </Link>
       </li>
       {user ? (
