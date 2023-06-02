@@ -2,8 +2,10 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import useMenu from "../../../Hook/useMenu";
 import FoodDetailsCard from "../../../components/FoodDetailsCard/FoodDetailsCard";
+import UseTitle from "../../../Hook/UseTitle";
 
 const MenuCategory = () => {
+  UseTitle('Shop')
   const [menu] = useMenu();
   const salads = menu.filter((item) => item.category === "salad");
   const pizza = menu.filter((item) => item.category === "pizza");

@@ -1,9 +1,12 @@
-import { FaBars, FaCalendarAlt, FaHome, FaMobileAlt, FaShoppingBag, FaShoppingCart, FaStar, FaWallet } from "react-icons/fa";
+import { FaBars, FaCalendarAlt, FaHome, FaMobileAlt, FaShoppingBag, FaShoppingCart, FaStar, FaWallet, FaUtensils, FaBook, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import UseTitle from "../Hook/UseTitle";
 
 const DashBoard = () => {
   UseTitle('DashBoard')
+
+  const isAdmin = true;
+
   return (
     <div className="drawer drawer-mobile">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -22,15 +25,25 @@ const DashBoard = () => {
           <h1 className="text-4xl font-semibold">Heavenly Feast</h1>
           <p>Restaurant</p>
           </div>
-          <li><NavLink to='/'><FaHome></FaHome> User Home</NavLink></li>
-          <li><NavLink to="/dashboard/myCart"><FaShoppingCart></FaShoppingCart> My Cart</NavLink></li>
-          <li><NavLink to='/'><FaWallet></FaWallet> Payment History</NavLink></li>
-          <li><NavLink to='/'><FaCalendarAlt></FaCalendarAlt> Reservation</NavLink></li>
-          <li><NavLink to='/'><FaStar></FaStar> Add Review</NavLink></li>
+          {
+            isAdmin ? <>
+            <li><NavLink to='/'><FaHome></FaHome> Admin Home</NavLink></li>
+            <li><NavLink to='/'><FaUtensils></FaUtensils> Add Items</NavLink></li>
+            <li><NavLink to='/'><FaBars></FaBars> Manage Items</NavLink></li>
+            <li><NavLink to='/'><FaBook></FaBook> Manage Booking</NavLink></li>
+            <li><NavLink to="/dashboard/allUser"><FaUsers></FaUsers> All User</NavLink></li>
+            </> : <>
+            <li><NavLink to='/'><FaHome></FaHome> User Home</NavLink></li>
+            <li><NavLink to="/dashboard/myCart"><FaShoppingCart></FaShoppingCart> My Cart</NavLink></li>
+            <li><NavLink to='/'><FaWallet></FaWallet> Payment History</NavLink></li>
+            <li><NavLink to='/'><FaCalendarAlt></FaCalendarAlt> Reservation</NavLink></li>
+            <li><NavLink to='/'><FaStar></FaStar> Add Review</NavLink></li>
+            </>
+          }
           <div className="divider"></div> 
           <li><NavLink to='/'> <FaHome></FaHome> Shop Home</NavLink></li>
-          <li><NavLink to='/'><FaBars></FaBars> Menu</NavLink></li>
-          <li><NavLink to='/'><FaShoppingBag></FaShoppingBag> Shop</NavLink></li>
+          <li><NavLink to='/menu'><FaBars></FaBars> Menu</NavLink></li>
+          <li><NavLink to='/shop'><FaShoppingBag></FaShoppingBag> Shop</NavLink></li>
           <li><NavLink to='/'><FaMobileAlt></FaMobileAlt> Contact</NavLink></li>
         </ul>
       </div>
