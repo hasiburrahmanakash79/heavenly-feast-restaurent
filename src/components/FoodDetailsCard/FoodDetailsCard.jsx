@@ -14,7 +14,7 @@ const FoodDetailsCard = ({ item }) => {
   const handleAddToCart = (item) => {
     console.log(item);
     if (user && user.email) {
-      const cartItem = { image, name, price, recipe, email: user.email, _id };
+      const cartItem = { image, name, price, recipe, email: user.email, id:_id };
       fetch("http://localhost:5000/carts", {
         method: "POST",
         headers: {
@@ -24,6 +24,7 @@ const FoodDetailsCard = ({ item }) => {
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log(data);
           if (data.insertedId) {
             refetch()
             Swal.fire({
