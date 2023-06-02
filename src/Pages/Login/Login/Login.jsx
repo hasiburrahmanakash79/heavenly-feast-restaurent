@@ -8,6 +8,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseTitle from "../../../Hook/UseTitle";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import SocialLogin from "../../../components/SocialLogin/SocialLogin";
 
 const Login = () => {
   UseTitle("Login");
@@ -35,15 +36,6 @@ const Login = () => {
 
   const from = location.state?.from?.pathname || "/";
 
-  // googleLogin
-  // const handleGoogleLogin = () =>{
-  //   googleLogin()
-  //   .then(result => {
-  //     console.log(result);
-  //     navigate(from, {replace: true})
-  //   })
-  //   .catch(error => console.log(error))
-  // }
   //Email password
   const handleLogIn = (event) => {
     event.preventDefault();
@@ -144,20 +136,15 @@ const Login = () => {
               </button>
             </div>
           </form>
-          <div className="text-center mb-7">
+          <div className="text-center mb-7 p-5">
+          <div className="divider"></div> 
             <p className="font-semibold">Or Sign In with</p>
             <div className="flex items-center justify-center gap-4 my-4">
-              {/* <button onClick={() => handleGoogleLogin()}>
-                <img
-                  src="https://i.ibb.co/KjQdbSD/image.png"
-                  alt=""
-                  className="w-6"
-                />
-              </button> */}
+              <SocialLogin></SocialLogin>
             </div>
             <Link to="/signUp">
               Do not have an account?{" "}
-              <span className="text-orange-600 font-bold">SignUp</span>{" "}
+              <span className="text-yellow-700 font-bold">SignUp</span>{" "}
             </Link>
           </div>
         </div>
