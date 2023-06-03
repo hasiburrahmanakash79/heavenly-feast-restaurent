@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { FaTrashAlt, FaUsers } from "react-icons/fa";
 import UseTitle from "../../../Hook/UseTitle";
+import Swal from "sweetalert2";
 
 const AllUsers = () => {
   UseTitle("AllUsers");
@@ -10,8 +11,22 @@ const AllUsers = () => {
     return res.json();
   });
 
-  const handleAdmin = (id) => {
-    
+  const handleAdmin = (user) => {
+    fetch(`http://localhost:5000/users/admin/${user._id}`,{
+        method: 'PATCH'
+    })
+    .then(res => res.json())
+    .then(data => {
+        refetch()
+        if(data.modifiedCount){
+            Swal.fire({
+                showConfirmButton: false,
+                timer: 1500,
+                title: `${user.name} is admin now`,
+                icon: "success",
+              });
+        }
+    })
   }
 
   return (
@@ -39,10 +54,8 @@ const AllUsers = () => {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>
-                  {user.role === "Admin" ? (
-                    "Admin"
-                  ) : (
-                    <button onClick={() => handleAdmin(user._id)} className="text-white text-xl bg-yellow-600 p-3 rounded">
+                  {user.role === 'admin' ? 'admin':(
+                    <button onClick={() => handleAdmin(user)} className="text-white text-xl bg-yellow-600 p-3 rounded">
                       <FaUsers></FaUsers>
                     </button>
                   )}

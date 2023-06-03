@@ -31,10 +31,7 @@ const SignUp = () => {
         console.log(loggedUser);
 
         updateUserInfo(name, photo)
-          .then((getImage) => {
-            const currentUser = result.user;
-            console.log(getImage, currentUser);
-
+          .then(() => {
             const userInfo = { name: name, email: email };
             fetch("http://localhost:5000/users", {
               method: "POST",
@@ -45,6 +42,7 @@ const SignUp = () => {
             })
               .then((res) => res.json())
               .then((data) => {
+                console.log(data);
                 if (data.insertedId) {
                   navigate(from, { replace: true });
                   Swal.fire({
