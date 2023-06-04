@@ -1,11 +1,14 @@
 import { FaBars, FaCalendarAlt, FaHome, FaMobileAlt, FaShoppingBag, FaShoppingCart, FaStar, FaWallet, FaUtensils, FaBook, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import UseTitle from "../Hook/UseTitle";
+import useAdmin from "../Hook/useAdmin";
 
 const DashBoard = () => {
   UseTitle('DashBoard')
 
-  const isAdmin = true;
+  // const isAdmin = true;
+
+  const [isAdmin] = useAdmin()
 
   return (
     <div className="drawer drawer-mobile">
