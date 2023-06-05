@@ -3,12 +3,18 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { FaTrashAlt, FaUsers } from "react-icons/fa";
 import UseTitle from "../../../Hook/UseTitle";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hook/useAxiosSecure";
 
 const AllUsers = () => {
   UseTitle("AllUsers");
-  const { data: users = [], refetch } = useQuery(["users"], async () => {
-    const res = await fetch("http://localhost:5000/users");
-    return res.json();
+  const [axiosSecure] = useAxiosSecure()
+  const { data: users = [], refetch } = useQuery({
+    queryKey:["users"], 
+    enabled: !!localStorage.getItem("access-token"),
+    queryFn: async () => {
+      const res = await axiosSecure.get("/users");
+      return res.data;
+    }
   });
 
   const handleAdmin = (user) => {
