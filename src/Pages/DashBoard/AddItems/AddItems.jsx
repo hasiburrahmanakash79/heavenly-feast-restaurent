@@ -13,7 +13,7 @@ const AddItems = () => {
   console.log(Image_Hosting_Token);
   const { register, handleSubmit} = useForm();
 
-  const image_hosting_url = `https://api.imgbb.com/1/upload?expiration=600&key=${Image_Hosting_Token}`
+  const image_hosting_url = `https://api.imgbb.com/1/upload?key=${Image_Hosting_Token}`
 
   const onSubmit = data => {
     const formData = new FormData();
