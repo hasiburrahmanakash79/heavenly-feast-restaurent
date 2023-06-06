@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import PrivateRoute from "../Routes/PrivateRoute"
 import Main from "../Layouts/Main";
 import Home from "../Pages/Home/Home/Home";
 import Menu from "../Pages/Menu/Menu/Menu";
@@ -9,6 +10,8 @@ import AddToCart from "../Pages/AddToCart/AddToCart";
 import DashBoard from "../Layouts/DashBoard";
 import MyCart from "../Pages/DashBoard/MyCart/MyCart";
 import AllUsers from "../Pages/DashBoard/AllUsers/AllUsers";
+import AddItems from "../Pages/DashBoard/AddItems/AddItems";
+import AdminRoute from "./AdminRoute";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +38,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <DashBoard></DashBoard>,
+    element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
     children: [
       {
         path: 'myCart',
@@ -44,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: 'allUser',
         element: <AllUsers></AllUsers>
+      },
+      {
+        path: 'addItem',
+        element: <AdminRoute><AddItems></AddItems></AdminRoute>
       }
     ]
   },
