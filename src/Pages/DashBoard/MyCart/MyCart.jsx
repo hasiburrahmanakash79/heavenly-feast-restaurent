@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import UseTitle from "../../../Hook/UseTitle";
 import useCart from "../../../Hook/useCart";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
@@ -22,7 +23,7 @@ const MyCart = () => {
           <h1 className="text-2xl font-bold">
             Total Price: {totalPrice.toFixed(2)}
           </h1>
-          <button className="btn btn-primary">PAY</button>
+          <Link to='/dashboard/payment'><button  className="btn btn-primary">PAY</button></Link>
         </div>
         <div className="overflow-x-auto">
           <table className="table w-full">
