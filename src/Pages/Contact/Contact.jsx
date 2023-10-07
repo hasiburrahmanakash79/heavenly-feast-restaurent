@@ -1,19 +1,19 @@
-import contactLottie from '../../assets/contact/contact.json'
+import contactLottie from "../../assets/contact/contact.json";
 import Lottie from "lottie-react";
 
 const Contact = () => {
   return (
-    <div className="p-5">
-        <div className="mb-8 md:w-1/2 md:mb-0">
-            <Lottie
-              animationData={contactLottie}
-              loop={true}
-              className="w-full md:h-[500px]"
-            />
-          </div>
-      <div className="w-full md:gap-10">
-        <form className="pb-5 border-2 rounded-lg shadow-md card-body">
-          <h1 className="pb-2 text-primary text-3xl md:text-4xl text-center">
+    <div className="p-5 py-20 container mx-auto md:grid grid-cols-2">
+      <div className="">
+        <Lottie
+          animationData={contactLottie}
+          loop={true}
+          className="w-full md:h-[500px]"
+        />
+      </div>
+      <div className="">
+        <form className="p-5 border rounded-lg shadow-xl card-body">
+          <h1 className="pb-2 text-3xl md:text-4xl text-center">
             Any Time
           </h1>
           <div className="">
