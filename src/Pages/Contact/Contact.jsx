@@ -1,30 +1,67 @@
+import contactLottie from '../../assets/contact/contact.json'
+import Lottie from "lottie-react";
 
 const Contact = () => {
-    return (
-        <div className="bg-gray-100 p-8">
-          <div className="max-w-2xl mx-auto">
-            <h1 className="text-3xl font-semibold mb-4">Contact Us</h1>
-            <p className="text-gray-700 mb-4">
-              Feel free to get in touch with us for any inquiries or bookings. We well be happy to assist you!
-            </p>
-            <form className="grid grid-cols-1 gap-6">
-              <div className="form-group">
-                <label htmlFor="name" className="text-gray-800 font-semibold">Name</label>
-                <input type="text" id="name" name="name" className="input-field" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email" className="text-gray-800 font-semibold">Email</label>
-                <input type="email" id="email" name="email" className="input-field" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="message" className="text-gray-800 font-semibold">Message</label>
-                <textarea id="message" name="message" rows="4" className="input-field" />
-              </div>
-              <button type="submit" className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Submit</button>
-            </form>
+  return (
+    <div className="p-5">
+        <div className="mb-8 md:w-1/2 md:mb-0">
+            <Lottie
+              animationData={contactLottie}
+              loop={true}
+              className="w-full md:h-[500px]"
+            />
           </div>
-        </div>
-      );
+      <div className="w-full md:gap-10">
+        <form className="pb-5 border-2 rounded-lg shadow-md card-body">
+          <h1 className="pb-2 text-primary text-3xl md:text-4xl text-center">
+            Any Time
+          </h1>
+          <div className="">
+            <div className="form-control">
+              <label className="label">
+                <p className="">Name</p>
+              </label>
+              <input
+                required
+                name="name"
+                type="text"
+                placeholder="Name"
+                className="outline outline-1 input"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <p className="">Email</p>
+              </label>
+              <input
+                required
+                name="email"
+                type="email"
+                placeholder="Email"
+                className="outline outline-1 input"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <p className="">Message</p>
+              </label>
+              <textarea
+                required
+                name="message"
+                className="outline outline-1 textarea"
+                placeholder="Message"
+              ></textarea>
+            </div>
+            <div className="mt-6">
+              <button className=" btn hover:-translate-y-1 btn-primary">
+                <span>Send Message</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default Contact;
