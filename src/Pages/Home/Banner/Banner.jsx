@@ -6,22 +6,22 @@ const Banner = () => {
     <div>
       <Carousel>
         <div>
-          <img src="https://i.ibb.co/TTFK90r/01.jpg" />
+          <img src="https://i.ibb.co/Rpx5Kqd/banner1.jpg" />
         </div>
         <div>
-          <img src="https://i.ibb.co/Z8qr5fx/02.jpg" />
+          <img src="https://i.ibb.co/t8pYQhc/banner2.jpg" />
         </div>
         <div>
-          <img src="https://i.ibb.co/31D7zbn/03.png" />
+          <img src="https://i.ibb.co/PCNY2fL/banner3.jpg" />
         </div>
         <div>
-          <img src="https://i.ibb.co/Yhq5Y8k/04.jpg" />
+          <img src="https://i.ibb.co/T2hGw1T/banner4.jpg" />
         </div>
         <div>
-          <img src="https://i.ibb.co/bPJX9xL/05.png" />
+          <img src="https://i.ibb.co/C18f7G5/banner5.jpg" />
         </div>
         <div>
-          <img src="https://i.ibb.co/frzkYTG/06.png" />
+          <img src="https://i.ibb.co/WttdPZG/banner6.jpg" />
         </div>
       </Carousel>
     </div>
