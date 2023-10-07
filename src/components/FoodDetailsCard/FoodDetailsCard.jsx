@@ -15,7 +15,7 @@ const FoodDetailsCard = ({ item }) => {
     console.log(item);
     if (user && user.email) {
       const cartItem = { image, name, price, recipe, email: user.email, id:_id };
-      fetch("http://localhost:5000/carts", {
+      fetch("https://heavenly-feast-server.vercel.app/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",
