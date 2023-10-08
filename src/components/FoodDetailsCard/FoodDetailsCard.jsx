@@ -9,12 +9,19 @@ const FoodDetailsCard = ({ item }) => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const [, refetch] = useCart()
+  const [, refetch] = useCart();
 
   const handleAddToCart = (item) => {
     console.log(item);
     if (user && user.email) {
-      const cartItem = { image, name, price, recipe, email: user.email, id:_id };
+      const cartItem = {
+        image,
+        name,
+        price,
+        recipe,
+        email: user.email,
+        id: _id,
+      };
       fetch("https://heavenly-feast-server.vercel.app/carts", {
         method: "POST",
         headers: {
@@ -26,7 +33,7 @@ const FoodDetailsCard = ({ item }) => {
         .then((data) => {
           console.log(data);
           if (data.insertedId) {
-            refetch()
+            refetch();
             Swal.fire({
               icon: "success",
               title: "Item has been added.",
@@ -52,17 +59,20 @@ const FoodDetailsCard = ({ item }) => {
   };
 
   return (
-    <div className="p-1">
-      <div className="card bg-base-100 shadow-xl">
-        <figure>
-          <img src={image} className="w-full" alt="Shoes" />
-        </figure>
-        <p className="bg-black bg-opacity-80 text-white p-1 px-2 rounded-2xl absolute right-5 top-5 ">
-          Price: ${price}
-        </p>
-        <div className="card-body items-center text-center">
-          <h2 className="card-title">{name}</h2>
-          <p>{recipe}</p>
+    <>
+      <div className="shadow-lg card">
+        <div className="relative">
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-56 rounded-lg object-cover object-center"
+          />
+        </div>
+        <div className="card-body items-center">
+          <div className="py-4 px-6">
+            <h2 className="text-2xl font-semibold">{name}</h2>
+            <p className="text-sm">{recipe}</p>
+          </div>
           <div className="card-actions">
             <button
               onClick={() => handleAddToCart(item)}
@@ -73,7 +83,7 @@ const FoodDetailsCard = ({ item }) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

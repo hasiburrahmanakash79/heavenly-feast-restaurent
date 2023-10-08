@@ -13,7 +13,7 @@ const MenuCategory = () => {
   const desserts = menu.filter((item) => item.category === "dessert");
   const drinks = menu.filter((item) => item.category === "drink");
   return (
-    <div className="my-10 text-center">
+    <div className="my-10 text-center container mx-auto">
       <Tabs>
         <TabList>
           <Tab>Salad</Tab>
