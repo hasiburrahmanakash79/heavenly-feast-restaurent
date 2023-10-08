@@ -12,11 +12,11 @@ const Soups = () => {
         <SectionCover
           title={"Soups"}
           subTitle={
-            "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            "Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
           }
         ></SectionCover>
       </div>
-      <div className="md:grid grid-cols-2 gap-5 my-5 px-2">
+      <div className="md:grid grid-cols-2 gap-5 my-5 px-2 container mx-auto">
         {offerMenu.map((item) => (
           <SingleMenu key={item._id} item={item}></SingleMenu>
         ))}

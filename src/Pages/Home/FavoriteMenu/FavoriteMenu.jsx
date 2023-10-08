@@ -27,11 +27,6 @@ const FavoriteMenu = () => {
             View more Items
           </button>
         </Link>
-        <div className="bg-black h-52 w-full flex items-center justify-center">
-          <h2 className="text-5xl text-center text-white">
-            Call Us: +088 01722-545468
-          </h2>
-        </div>
       </div>
     </section>
   );

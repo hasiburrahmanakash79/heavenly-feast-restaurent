@@ -6,16 +6,18 @@ import OnlineService from "../OnlineService/OnlineService";
 import Reviews from "../Reviews/Reviews";
 
 const Home = () => {
-    UseTitle('Home')
-    return (
-        <div>
-            <Banner></Banner> 
-            <OnlineService></OnlineService>  
-            <FavoriteMenu></FavoriteMenu>
-            <Feature></Feature>    
-            <Reviews></Reviews>    
-        </div>
-    );
+  UseTitle("Home");
+  return (
+    <div>
+      <Banner></Banner>
+      <div className="container mx-auto">
+        <OnlineService></OnlineService>
+        <FavoriteMenu></FavoriteMenu>
+        <Reviews></Reviews>
+      </div>
+      <Feature></Feature>
+    </div>
+  );
 };
 
 export default Home;

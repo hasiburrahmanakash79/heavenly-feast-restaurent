@@ -27,9 +27,6 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/dashboard">Dashboard</Link>
-      </li>
-      <li>
         <Link to="/menu">Our menu</Link>
       </li>
       <li>
@@ -66,6 +63,9 @@ const Navbar = () => {
               <Link className="justify-between w-full">
                 {user?.displayName}
               </Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
             </li>
             <li>
               <Link className="w-full" onClick={handleLogout}>

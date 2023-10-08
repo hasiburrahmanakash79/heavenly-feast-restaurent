@@ -12,7 +12,7 @@ const TodayOffer = () => {
         subTitle={"Do not miss"}
         title={"Today Offer"}
       ></SectionTitle>
-      <div className="md:grid grid-cols-2 gap-5 my-5 px-2">
+      <div className="md:grid grid-cols-2 gap-5 my-5 px-2 container mx-auto">
         {offerMenu.map((item) => (
           <SingleMenu key={item._id} item={item}></SingleMenu>
         ))}
