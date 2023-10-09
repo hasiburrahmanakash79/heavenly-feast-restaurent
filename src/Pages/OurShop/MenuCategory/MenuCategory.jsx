@@ -3,6 +3,7 @@ import "react-tabs/style/react-tabs.css";
 import useMenu from "../../../Hook/useMenu";
 import FoodDetailsCard from "../../../components/FoodDetailsCard/FoodDetailsCard";
 import UseTitle from "../../../Hook/UseTitle";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const MenuCategory = () => {
   UseTitle('Shop')
@@ -14,6 +15,7 @@ const MenuCategory = () => {
   const drinks = menu.filter((item) => item.category === "drink");
   return (
     <div className="my-10 text-center container mx-auto">
+      <SectionTitle title={"All menu"} subTitle={"Search your favorite items"}></SectionTitle>
       <Tabs>
         <TabList>
           <Tab>Salad</Tab>

@@ -86,20 +86,28 @@ const OnlineService = () => {
         </SwiperSlide>
         <SwiperSlide>
           <img src={slider9} alt="" />
+          <h1 className="text-center text-lg md:text-3xl font-semibold text-white -mt-8 md:-mt-16">
+            Chawmin
+          </h1>
         </SwiperSlide>
       </Swiper>
 
-      <div className="bg-[url('https://i.ibb.co/VvJCvLr/chef-service.jpg')] p-20 my-20">
-        <div className="text-center bg-white p-10 md:w-3/4 mx-auto">
-          <h1 className="text-4xl mb-5">Heavenly feast</h1>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore
-            nam eveniet adipisci! Voluptatum aliquid excepturi deleniti
-            obcaecati illo non repellendus commodi, eveniet minus, quia
-            dignissimos eius veniam sequi perspiciatis sint vero voluptate, quo
-            dicta id doloremque dolore omnis officiis cupiditate repellat.
-            Adipisci, ad accusamus tenetur ea molestiae aliquam et eum.
-          </p>
+      <div className="bg-[url('https://i.ibb.co/4PL2BsM/bg.jpg')] my-20">
+        <div className="text-center bg-black/50 p-20 mx-auto">
+          <div className="bg-white p-10 w-3/4 mx-auto">
+            <h1 className="text-4xl mb-5">Heavenly feast</h1>
+            <p>
+              Indulge in a culinary journey like no other at Heavenly Feast. Our
+              restaurant is a haven for food lovers seeking a divine dining
+              experience. With an eclectic menu that fuses global flavors with a
+              touch of elegance, every dish is a masterpiece. From savory
+              appetizers to delectable desserts, our chefs craft each plate with
+              passion and precision. Immerse yourself in the warm ambiance,
+              impeccable service, and heavenly flavors that make every visit to
+              Heavenly Feast an unforgettable feast for the senses. Join us and
+              savor the taste of paradise on every plate.
+            </p>
+          </div>
         </div>
       </div>
     </section>
