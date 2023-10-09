@@ -1,5 +1,6 @@
-import UseTitle from "../../../Hook/UseTitle";
-import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import UseTitle from "../../../../Hook/UseTitle";
+import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
+
 
 const Payment = () => {
     UseTitle('Payment')

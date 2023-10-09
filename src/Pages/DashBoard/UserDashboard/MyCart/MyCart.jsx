@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import UseTitle from "../../../Hook/UseTitle";
-import useCart from "../../../Hook/useCart";
-import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import CartDetails from "./CartDetails";
+import UseTitle from "../../../../Hook/UseTitle";
+import useCart from "../../../../Hook/useCart";
+import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 
 const MyCart = () => {
   UseTitle("MyCart");

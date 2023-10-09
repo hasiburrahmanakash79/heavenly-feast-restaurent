@@ -1,7 +1,6 @@
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
-import useCart from "../../../Hook/useCart";
-// import useCart from "../../../Hook/useCart";
+import useCart from "../../../../Hook/useCart";
 
 const CartDetails = ({ item, index,}) => {
   const { name, price, image } = item;

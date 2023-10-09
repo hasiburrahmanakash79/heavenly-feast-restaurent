@@ -8,13 +8,14 @@ import Login from "../Pages/Login/Login/Login";
 import SignUp from "../Pages/Login/SignUp/SignUp";
 import AddToCart from "../Pages/AddToCart/AddToCart";
 import DashBoard from "../Layouts/DashBoard";
-import MyCart from "../Pages/DashBoard/MyCart/MyCart";
 import AdminRoute from "./AdminRoute";
-import Payment from "../Pages/DashBoard/Payment/Payment";
 import Contact from "../Pages/Contact/Contact";
 import AllUsers from "../Pages/DashBoard/AdminDashboard/AllUsers";
 import AddItems from "../Pages/DashBoard/AdminDashboard/AddItems";
 import ManageItems from "../Pages/DashBoard/AdminDashboard/ManageItems";
+import MyCart from "../Pages/DashBoard/UserDashboard/MyCart/MyCart";
+import Payment from "../Pages/DashBoard/UserDashboard/Payment/Payment";
+import AddReview from "../Pages/DashBoard/UserDashboard/AddReview/AddReview";
 
 const router = createBrowserRouter([
   {
@@ -47,13 +48,18 @@ const router = createBrowserRouter([
     path: '/dashboard',
     element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
     children: [
+      // User DashBoard 
       {
         path: 'myCart',
-        element: <MyCart></MyCart>
+        element: <MyCart/>
       },
       {
         path: 'payment',
-        element: <Payment></Payment>
+        element: <Payment/>
+      },
+      {
+        path: 'review',
+        element: <AddReview/>
       },
 
       ///Admin Dashboard
