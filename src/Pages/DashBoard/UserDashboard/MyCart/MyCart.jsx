@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import CartDetails from "./CartDetails";
 import UseTitle from "../../../../Hook/UseTitle";
 import useCart from "../../../../Hook/useCart";
@@ -6,7 +5,7 @@ import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 
 const MyCart = () => {
   UseTitle("MyCart");
-  const [cart, ] = useCart();
+  const [cart] = useCart();
   const totalPrice = cart.reduce((sum, item) => item.price + sum, 0);
 
   return (
@@ -23,7 +22,6 @@ const MyCart = () => {
           <h1 className="text-2xl font-bold">
             Total Price: {totalPrice.toFixed(2)}
           </h1>
-          <Link to='/dashboard/payment'><button  className="btn btn-primary">PAY</button></Link>
         </div>
         <div className="overflow-x-auto">
           <table className="table w-full">
@@ -34,7 +32,8 @@ const MyCart = () => {
                 <th>Food Image</th>
                 <th>Item Name</th>
                 <th>Price</th>
-                <th></th>
+                <th>Payment</th>
+                <th>Remove</th>
               </tr>
             </thead>
             <tbody>

@@ -1,9 +1,10 @@
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useCart from "../../../../Hook/useCart";
+import { Link } from "react-router-dom";
 
 const CartDetails = ({ item, index,}) => {
-  const { name, price, image } = item;
+  const { _id, name, price, image } = item;
   const [, refetch] = useCart();
 
   const handleDelete = (item) => {
@@ -46,6 +47,7 @@ const CartDetails = ({ item, index,}) => {
       </td>
       <td>{name}</td>
       <td>${price}</td>
+      <td><Link to={`/dashboard/payment/${_id}`}><button  className="btn btn-sm btn-primary">Pay Now</button></Link></td>
       <th>
         <button
           onClick={() => handleDelete(item)}
