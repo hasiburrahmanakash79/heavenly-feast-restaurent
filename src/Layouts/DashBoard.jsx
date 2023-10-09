@@ -17,11 +17,7 @@ import useAdmin from "../Hook/useAdmin";
 
 const DashBoard = () => {
   UseTitle("DashBoard");
-
-  // const isAdmin = true;
-
   const [isAdmin] = useAdmin();
-
   return (
     <div className="drawer drawer-mobile">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
