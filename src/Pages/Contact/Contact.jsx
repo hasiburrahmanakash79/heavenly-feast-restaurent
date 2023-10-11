@@ -13,9 +13,6 @@ const Contact = () => {
       </div>
       <div className="">
         <form className="p-5 border rounded-lg shadow-xl card-body">
-          <h1 className="pb-2 text-3xl md:text-4xl text-center">
-            Any Time
-          </h1>
           <div className="">
             <div className="form-control">
               <label className="label">
