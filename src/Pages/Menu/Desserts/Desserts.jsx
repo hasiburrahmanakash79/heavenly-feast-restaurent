@@ -13,7 +13,7 @@ const Desserts = () => {
           <SectionCover
             title={"Desserts"}
             subTitle={
-              "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+              "Dessert is a course that concludes a meal. The course consists of sweet foods, such as candy, and possibly a beverage such as dessert wine and liqueur. Some cultures sweeten foods that are more commonly savory to create desserts. In some parts of the world there is no tradition of a dessert course to conclude a meal."
             }
           ></SectionCover>
         </div>
