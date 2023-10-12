@@ -13,7 +13,7 @@ const Salad = () => {
           <SectionCover
             title={"Salads"}
             subTitle={
-              "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+              "A salad is a dish consisting of mixed ingredients, frequently vegetables. They are typically served chilled or at room temperature, though some can be served warm. Condiments and salad dressings, which exist in a variety of flavors, are often used to enhance a salad."
             }
           ></SectionCover>
         </div>
