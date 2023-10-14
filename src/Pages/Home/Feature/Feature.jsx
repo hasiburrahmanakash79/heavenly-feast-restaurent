@@ -8,18 +8,14 @@ const Feature = () => {
           subTitle={"Check it out"}
           title={"FROM OUR MENU"}
         ></SectionTitle>
-        <div className="md:flex justify-center items-center gap-10">
+        <div className="md:grid grid-cols-2 justify-center items-center gap-10">
           <div>
             <img src="https://i.ibb.co/kmrkrs8/featured.jpg" className="rounded-xl" alt="" />
           </div>
           <div>
-            <p className="text-xl mt-4">November 03, 2024</p>
-            <h1 className="text-2xl my-3 uppercase">Where can i get some?</h1>
+            <h1 className="text-5xl font-bold my-3">Why Heavenly Feast?</h1>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti
-              voluptate, molestiae esse ex quos quasi error saepe dolorum? Aut,
-              aspernatur. Lorem ipsum, dolor sit amet consectetur adipisicing
-              elit. Quo, fugiat.
+            Indulge in a culinary journey like no other at Heavenly Feast. Our restaurant is a haven for food lovers seeking a divine dining experience. With an eclectic menu that fuses global flavors with a touch of elegance, every dish is a masterpiece. From savory appetizers to delectable desserts, our chefs craft each plate with passion and precision. Immerse yourself in the warm ambiance, impeccable service, and heavenly flavors that make every visit to Heavenly Feast an unforgettable feast for the senses. Join us and savor the taste of paradise on every plate.
             </p>
             <button className="btn btn-outline btn-warning border-0 border-b-4 mt-3 ">
               Order now
