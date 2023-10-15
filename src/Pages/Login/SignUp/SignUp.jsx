@@ -4,6 +4,8 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import UseTitle from "../../../Hook/UseTitle";
 import SocialLogin from "../../../components/SocialLogin/SocialLogin";
+import Lottie from "lottie-react";
+import loginLottie from "../../../assets/login.json";
 
 const SignUp = () => {
   UseTitle("SignUp");
@@ -32,7 +34,7 @@ const SignUp = () => {
 
         updateUserInfo(name, photo)
           .then(() => {
-            const userInfo = { name: name, email: email, role: 'user' };
+            const userInfo = { name: name, email: email, role: "user" };
             fetch("https://heavenly-feast-server.vercel.app/users", {
               method: "POST",
               headers: {
@@ -61,20 +63,14 @@ const SignUp = () => {
   };
 
   return (
-    <div className="hero min-h-screen">
-      <div className="md:flex justify-between items-center gap-12 px-3">
-        <div className="md:w-1/2">
-          <img src="https://i.ibb.co/jDMz1bj/login-page-banner.png" alt="" />
-        </div>
-        <div className="md:w-1/2 border rounded-lg bg-base-100">
-          <div className=" text-center">
-            <h1 className="text-3xl my-5 font-bold">SignUp</h1>
-            <img
-              className="w-16 mx-auto"
-              src="https://i.ibb.co/NNQM1N7/image.png"
-              alt=""
-            />
-          </div>
+    <div className="hero min-h-screen container mx-auto">
+      <div className="grid md:grid-cols-2 items-center px-3">
+        <Lottie
+          animationData={loginLottie}
+          loop={true}
+          className="w-full md:h-[500px]"
+        />
+        <div className="border rounded-lg shadow-xl">
           <form onSubmit={handleSignUp} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -124,18 +120,14 @@ const SignUp = () => {
                 required
               />
             </div>
-            <div className="form-control mt-1">
-              <button className="btn btn-warning">Sign Up</button>
+            <div className="form-control mt-1 grid grid-cols-3 ">
+              <button className="btn btn-warning col-span-2">Sign Up</button>
+              <div className="flex items-center justify-center gap-4 my-4 col-span-1">
+                <SocialLogin></SocialLogin>
+              </div>
             </div>
             <p className="text-red-600">{error}</p>
           </form>
-          <div className="p-5 text-center">
-            <div className="divider"></div>
-            <p className="font-semibold">Or Sign In with</p>
-            <div className="flex items-center justify-center gap-4 my-4">
-              <SocialLogin></SocialLogin>
-            </div>
-          </div>
           <div className="text-center mb-7">
             <Link to="/login">
               Have an account?{" "}

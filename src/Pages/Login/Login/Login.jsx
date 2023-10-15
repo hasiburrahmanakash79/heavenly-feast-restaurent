@@ -4,11 +4,13 @@ import {
   LoadCanvasTemplate,
   validateCaptcha,
 } from "react-simple-captcha";
+import loginLottie from '../../../assets/login.json'
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseTitle from "../../../Hook/UseTitle";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import SocialLogin from "../../../components/SocialLogin/SocialLogin";
+import Lottie from "lottie-react";
 
 const Login = () => {
   UseTitle("Login");
@@ -62,11 +64,13 @@ const Login = () => {
   };
   return (
     <div className="hero min-h-screen">
-      <div className="md:flex justify-between items-center gap-12 px-3">
-        <div className="md:w-1/2">
-          <img src="https://i.ibb.co/jDMz1bj/login-page-banner.png" alt="" />
-        </div>
-        <div className="md:w-1/2 border rounded-lg bg-base-100">
+      <div className="grid md:grid-cols-2 items-center gap-12 px-3">
+        <Lottie
+          animationData={loginLottie}
+          loop={true}
+          className="w-full md:h-[500px]"
+        />
+        <div className=" border rounded-lg ">
           <div className=" text-center">
             <h1 className="text-3xl my-5 font-bold">Login</h1>
             <img
