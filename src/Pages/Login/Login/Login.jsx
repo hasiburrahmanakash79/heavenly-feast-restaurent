@@ -63,22 +63,14 @@ const Login = () => {
       });
   };
   return (
-    <div className="hero min-h-screen">
+    <div className="hero min-h-screen container mx-auto">
       <div className="grid md:grid-cols-2 items-center gap-12 px-3">
         <Lottie
           animationData={loginLottie}
           loop={true}
           className="w-full md:h-[500px]"
         />
-        <div className=" border rounded-lg ">
-          <div className=" text-center">
-            <h1 className="text-3xl my-5 font-bold">Login</h1>
-            <img
-              className="w-16 mx-auto"
-              src="https://i.ibb.co/NNQM1N7/image.png"
-              alt=""
-            />
-          </div>
+        <div className=" border rounded-lg shadow-xl">
           <form onSubmit={handleLogIn} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -126,12 +118,6 @@ const Login = () => {
                   className="input input-bordered my-3"
                   required
                 />
-                {/* <button
-                  onClick={verifyCaptcha}
-                  className="btn btn-outline btn-xs"
-                >
-                  Verify
-                </button> */}
               </div>
             </div>
             <div className="form-control mt-1">
