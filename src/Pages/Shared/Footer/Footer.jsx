@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="bg-[#1F2937] p-10">
           <p className="text-2xl font-semibold">Contact Us</p>
           <p>
-            123 ABS Street, Uni 21, Bangladesh <br /> +88 123456789 <br /> Mon -
+            123 ABS Street, Uni 21, Bangladesh <br /> +88 01101412215 <br /> Mon -
             Fri: 08:00 - 22:00 <br /> Sat - Sun: 10:00 - 23:00
           </p>
         </div>
