@@ -1,7 +1,7 @@
-import { useForm } from 'react-hook-form';
+import { useForm } from "react-hook-form";
 
 const Booking = () => {
-    const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -13,43 +13,84 @@ const Booking = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="bg-base-200 p-10 rounded-lg md:w-1/2 mx-auto"
       >
-        <div>
-          <label className="label">
-            <span className="label-text">Which recipe you liked most?</span>
-          </label>
-          <input
-            type="text"
-            {...register("recipe", { required: true })}
-            placeholder="Type here"
-            className="input w-full"
-          />
+        <div className="grid grid-cols-3 gap-10">
+          <div>
+            <label className="label">
+              <span className="label-text">Name </span>
+            </label>
+            <input
+              type="text"
+              {...register("name", { required: true })}
+              placeholder="Type here"
+              className="input w-full"
+            />
+          </div>
+          <div>
+            <label className="label">
+              <span className="label-text">Phone</span>
+            </label>
+            <input
+              {...register("phone", { required: true })}
+              type="number"
+              placeholder="Type here"
+              className="input w-full"
+            />
+          </div>
+          <div>
+            <label className="label">
+              <span className="label-text">Email</span>
+            </label>
+            <input
+              {...register("email", { required: true })}
+              type="email"
+              placeholder="Type here"
+              className="input w-full"
+            />
+          </div>
         </div>
-
-        <div>
-          <label className="label">
-            <span className="label-text">
-              Do you have any suggestion for us?
-            </span>
-          </label>
-          <input
-            {...register("suggestion", { required: true })}
-            type="text"
-            placeholder="Type here"
-            className="input w-full"
-          />
-        </div>
-        <div>
-          <label className="label">
-            <span className="label-text">
-              Kindly express your care in a short way.
-            </span>
-          </label>
-          <textarea
-            {...register("recipe", { required: true })}
-            className="rounded-lg w-full p-4"
-            placeholder=" Recipe Details"
-            rows="5"
-          ></textarea>
+        <div className="grid grid-cols-3 gap-10">
+          <div>
+            <label className="label">
+              <span className="label-text">Date</span>
+            </label>
+            <input
+              type="date"
+              {...register("date", { required: true })}
+              placeholder="Type here"
+              className="input w-full"
+            />
+          </div>
+          <div>
+            <label className="label">
+              <span className="label-text">Time</span>
+            </label>
+            <input
+              {...register("time", { required: true })}
+              type="time"
+              placeholder="Type here"
+              className="input w-full"
+            />
+          </div>
+          <div>
+            <label className="label">
+              <span className="label-text">Guest</span>
+            </label>
+            <select
+              {...register("person", { required: true })}
+              type="select"
+              placeholder="1 Person"
+              className="input w-full"
+            >
+              <option disabled selected>
+                1 Person
+              </option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
         </div>
         <div>
           <input
