@@ -18,6 +18,7 @@ import Payment from "../Pages/DashBoard/UserDashboard/Payment/Payment";
 import AddReview from "../Pages/DashBoard/UserDashboard/AddReview/AddReview";
 import UserHome from "../Pages/DashBoard/UserDashboard/UserHome/UserHome";
 import PaymentHistory from "../Pages/DashBoard/UserDashboard/PaymentHistory/PaymentHistory";
+import Reservation from "../Pages/DashBoard/UserDashboard/Reservation/Reservation";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: 'myCart',
         element: <MyCart/>
+      },
+      {
+        path: 'reservation',
+        element: <Reservation/>
       },
       {
         path: 'paymentHistory',
