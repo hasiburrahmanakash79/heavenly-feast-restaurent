@@ -47,7 +47,7 @@ const CartDetails = ({ item, index,}) => {
       </td>
       <td>{name}</td>
       <td>${price}</td>
-      <td><Link to={`/dashboard/payment/${_id}`}><button  className="btn btn-sm btn-primary">Pay Now</button></Link></td>
+      <td><Link to={`/dashboard/payment/${_id}`}><button  className="btn btn-sm btn-primary">Go to Pay</button></Link></td>
       <th>
         <button
           onClick={() => handleDelete(item)}

@@ -78,51 +78,58 @@ const Payment = () => {
           <div className="grid grid-cols-3 gap-10">
             <div>
               <label className="label">
-                <span className="label-text">Date</span>
+                <span className="label-text">Location</span>
               </label>
               <input
-                type="date"
-                {...register("date", { required: true })}
-                placeholder="Type here"
+                type="text"
+                {...register("location", { required: true })}
+                placeholder="Delivery location"
                 className="input w-full"
               />
             </div>
             <div>
               <label className="label">
-                <span className="label-text">Time</span>
-              </label>
-              <input
-                {...register("time", { required: true })}
-                type="time"
-                placeholder="Type here"
-                className="input w-full"
-              />
-            </div>
-            <div>
-              <label className="label">
-                <span className="label-text">Guest</span>
+                <span className="label-text">Quantity</span>
               </label>
               <select
-                {...register("person", { required: true })}
+                {...register("quantity", { required: true })}
                 type="select"
-                placeholder="1 Person"
+                placeholder="Quantity"
                 className="input w-full"
               >
                 <option disabled selected>
-                  1 Person
+                Select Quantity
                 </option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
                 <option>4</option>
-                <option>5</option>
+              </select>
+            </div>
+            <div>
+              <label className="label">
+                <span className="label-text">Select Currency</span>
+              </label>
+              <select
+                {...register("currency", { required: true })}
+                type="select"
+                placeholder="Currency"
+                className="input w-full"
+              >
+                <option disabled selected>
+                  Select Currency
+                </option>
+                <option>BDT</option>
+                <option>USD</option>
+                <option>URO</option>
+                <option>RUP</option>
               </select>
             </div>
           </div>
           <div>
             <input
               type="submit"
-              value="Add Item"
+              value="Payment"
               className="btn bg-[#D1A054] border-none w-full mt-6"
             />
           </div>
