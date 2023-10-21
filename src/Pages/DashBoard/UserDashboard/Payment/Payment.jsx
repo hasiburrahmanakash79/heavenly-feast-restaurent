@@ -13,7 +13,7 @@ const Payment = () => {
   const { id } = useParams();
   const items = cart.find((menu) => menu._id == id);
   console.log(items);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState: { errors },} = useForm();
 
   const onSubmit = (data) => {
     data.itemsID = id
@@ -54,9 +54,10 @@ const Payment = () => {
                 type="text"
                 {...register("name", { required: true })}
                 placeholder="Type here"
-                value={user.displayName}
+                defaultValue={user.displayName}
                 className="input w-full"
               />
+              {errors.name && <span>This field is required</span>}
             </div>
             <div>
               <label className="label">
@@ -66,9 +67,10 @@ const Payment = () => {
                 {...register("email", { required: true })}
                 type="email"
                 placeholder="Type here"
-                value={user.email}
+                defaultValue={user.email}
                 className="input w-full"
               />
+              {errors.email && <span>This field is required</span>}
             </div>
             <div>
               <label className="label">
@@ -80,6 +82,7 @@ const Payment = () => {
                 placeholder="Type here"
                 className="input w-full"
               />
+              {errors.phone && <span>This field is required</span>}
             </div>
           </div>
           <div className="md:grid grid-cols-3 gap-10">
@@ -93,6 +96,7 @@ const Payment = () => {
                 placeholder="Delivery location"
                 className="input w-full"
               />
+              {errors.location && <span>This field is required</span>}
             </div>
             <div>
               <label className="label">
@@ -104,7 +108,7 @@ const Payment = () => {
                 placeholder="Quantity"
                 className="input w-full"
               >
-                <option disabled selected>
+                <option disabled>
                 Select Quantity
                 </option>
                 <option>1</option>
@@ -112,6 +116,7 @@ const Payment = () => {
                 <option>3</option>
                 <option>4</option>
               </select>
+              {errors.quantity && <span>This field is required</span>}
             </div>
             <div>
               <label className="label">
@@ -123,7 +128,7 @@ const Payment = () => {
                 placeholder="Currency"
                 className="input w-full"
               >
-                <option disabled selected>
+                <option disabled>
                   Select Currency
                 </option>
                 <option>BDT</option>
@@ -131,6 +136,7 @@ const Payment = () => {
                 <option>URO</option>
                 <option>RUP</option>
               </select>
+              {errors.currency && <span>This field is required</span>}
             </div>
           </div>
           <div>
