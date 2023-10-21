@@ -20,6 +20,7 @@ import UserHome from "../Pages/DashBoard/UserDashboard/UserHome/UserHome";
 import PaymentHistory from "../Pages/DashBoard/UserDashboard/PaymentHistory/PaymentHistory";
 import Reservation from "../Pages/DashBoard/UserDashboard/Reservation/Reservation";
 import PaymentSuccess from "../Pages/DashBoard/UserDashboard/Payment/Paymentsuccess";
+import PaymentFail from "../Pages/DashBoard/UserDashboard/Payment/PaymentFail";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
         {
           path: '/payment/success/:tranId',
           element: <PaymentSuccess/>
+        },
+        {
+          path: '/payment/fail/:tranId',
+          element: <PaymentFail/>
         },
     ]
   },
