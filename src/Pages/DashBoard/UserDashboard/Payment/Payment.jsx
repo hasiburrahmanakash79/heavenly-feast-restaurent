@@ -16,7 +16,6 @@ const Payment = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     data.itemsID = id
     fetch('http://localhost:5000/order', {
       method: 'POST',
@@ -30,7 +29,7 @@ const Payment = () => {
     <div className="p-5">
       <SectionTitle subTitle={"Pay now"} title={"Payment"}></SectionTitle>
       <div className="md:grid grid-cols-2 bg-base-200 p-5 rounded">
-        <div className="flex justify-center items-center gap-5">
+        <div className="md:flex justify-center items-center gap-5">
           <div className="avatar">
             <div className="w-full rounded">
               <img src={items?.image} />
@@ -46,7 +45,7 @@ const Payment = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="p-10 rounded-lg mx-auto"
         >
-          <div className="grid grid-cols-3 gap-10">
+          <div className="md:grid grid-cols-3 gap-10">
             <div>
               <label className="label">
                 <span className="label-text">Name </span>
@@ -83,7 +82,7 @@ const Payment = () => {
               />
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-10">
+          <div className="md:grid grid-cols-3 gap-10">
             <div>
               <label className="label">
                 <span className="label-text">Location</span>
@@ -116,7 +115,7 @@ const Payment = () => {
             </div>
             <div>
               <label className="label">
-                <span className="label-text">Select Currency</span>
+                <span className="label-text">Currency</span>
               </label>
               <select
                 {...register("currency", { required: true })}
