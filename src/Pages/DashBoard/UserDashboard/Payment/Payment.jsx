@@ -57,7 +57,7 @@ const Payment = () => {
                 defaultValue={user.displayName}
                 className="input w-full"
               />
-              {errors.name && <span>This field is required</span>}
+              {errors.name && <span className="text-red-600">This field is required</span>}
             </div>
             <div>
               <label className="label">
@@ -70,7 +70,7 @@ const Payment = () => {
                 defaultValue={user.email}
                 className="input w-full"
               />
-              {errors.email && <span>This field is required</span>}
+              {errors.email && <span className="text-red-600">This field is required</span>}
             </div>
             <div>
               <label className="label">
@@ -82,7 +82,7 @@ const Payment = () => {
                 placeholder="Type here"
                 className="input w-full"
               />
-              {errors.phone && <span>This field is required</span>}
+              {errors.phone && <span className="text-red-600">This field is required</span>}
             </div>
           </div>
           <div className="md:grid grid-cols-3 gap-10">
@@ -96,7 +96,7 @@ const Payment = () => {
                 placeholder="Delivery location"
                 className="input w-full"
               />
-              {errors.location && <span>This field is required</span>}
+              {errors.location && <span className="text-red-600">This field is required</span>}
             </div>
             <div>
               <label className="label">
@@ -116,7 +116,7 @@ const Payment = () => {
                 <option>3</option>
                 <option>4</option>
               </select>
-              {errors.quantity && <span>This field is required</span>}
+              {errors.quantity && <span className="text-red-600">This field is required</span>}
             </div>
             <div>
               <label className="label">
@@ -136,7 +136,7 @@ const Payment = () => {
                 <option>URO</option>
                 <option>RUP</option>
               </select>
-              {errors.currency && <span>This field is required</span>}
+              {errors.currency && <span className="text-red-600">This field is required</span>}
             </div>
           </div>
           <div>
