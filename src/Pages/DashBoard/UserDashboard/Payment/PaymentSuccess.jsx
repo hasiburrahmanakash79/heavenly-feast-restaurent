@@ -1,7 +1,7 @@
 
 const PaymentSuccess = () => {
     return (
-        <div>
+        <div className="py-96">
            <p>success</p> 
         </div>
     );

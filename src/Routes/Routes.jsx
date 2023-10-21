@@ -19,6 +19,7 @@ import AddReview from "../Pages/DashBoard/UserDashboard/AddReview/AddReview";
 import UserHome from "../Pages/DashBoard/UserDashboard/UserHome/UserHome";
 import PaymentHistory from "../Pages/DashBoard/UserDashboard/PaymentHistory/PaymentHistory";
 import Reservation from "../Pages/DashBoard/UserDashboard/Reservation/Reservation";
+import PaymentSuccess from "../Pages/DashBoard/UserDashboard/Payment/Paymentsuccess";
 
 const router = createBrowserRouter([
   {
@@ -44,7 +45,11 @@ const router = createBrowserRouter([
         {
           path: '/contact',
           element: <Contact/>
-        }
+        },
+        {
+          path: '/payment/success/:tranId',
+          element: <PaymentSuccess/>
+        },
     ]
   },
   {
@@ -72,6 +77,7 @@ const router = createBrowserRouter([
         path: 'payment/:id',
         element: <Payment/>
       },
+      
       {
         path: 'review',
         element: <AddReview/>
