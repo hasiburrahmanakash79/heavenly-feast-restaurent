@@ -17,6 +17,14 @@ const Payment = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    data.itemsID = id
+    fetch('http://localhost:5000/order', {
+      method: 'POST',
+      headers: {
+        "content-type" : "application/json"
+      },
+      body: JSON.stringify(data)
+    })
   };
   return (
     <div className="p-5">

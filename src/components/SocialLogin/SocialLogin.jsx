@@ -20,7 +20,7 @@ const SocialLogin = () => {
           name: signInUser.displayName,
           email: signInUser.email,
         };
-        fetch("https://heavenly-feast-server.vercel.app/users", {
+        fetch("http://localhost:5000/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
