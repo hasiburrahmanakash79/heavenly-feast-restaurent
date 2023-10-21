@@ -12,7 +12,6 @@ const Payment = () => {
   const [cart] = useCart();
   const { id } = useParams();
   const items = cart.find((menu) => menu._id == id);
-  console.log(items);
   const { register, handleSubmit, formState: { errors },} = useForm();
 
   const onSubmit = (data) => {
@@ -23,6 +22,10 @@ const Payment = () => {
         "content-type" : "application/json"
       },
       body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
     })
   };
   return (
