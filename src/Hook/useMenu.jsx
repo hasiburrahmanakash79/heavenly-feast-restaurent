@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 const useMenu = () => {
   // const [menu, setMenu] = useState([]);
   // useEffect(() => {
-  //   fetch("http://localhost:5000/menu")
+  //   fetch("https://heavenly-feast-server.vercel.app/menu")
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setMenu(data);
@@ -18,7 +18,7 @@ const useMenu = () => {
   } = useQuery({
     queryKey: ["menu"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/menu");
+      const res = await fetch("https://heavenly-feast-server.vercel.app/menu");
       return res.json();
     },
   });
