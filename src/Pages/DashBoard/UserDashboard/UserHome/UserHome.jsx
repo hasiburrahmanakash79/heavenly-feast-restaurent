@@ -10,7 +10,10 @@ const UserHome = () => {
         <div className="bg-violet-300 flex flex-col justify-center items-center py-28">
           <div className="avatar">
             <div className="w-40 rounded-full">
-              <img src={user?.image} />
+              {
+                user?.image ? <img src={user?.image} /> : <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" />
+              }
+              
             </div>
           </div>
           <h1 className="text-3xl mt-7">{user?.displayName} </h1>
