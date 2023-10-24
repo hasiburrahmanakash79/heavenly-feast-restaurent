@@ -5,7 +5,7 @@ const UserHome = () => {
   const { user } = useContext(AuthContext);
   return (
     <div className="p-10">
-      <h1 className="text-3xl font-semibold mb-10">Hi, Welcome Back! </h1>
+      <h1 className="text-3xl font-semibold mb-10">Hi, Welcome Back! {user?.displayName} </h1>
       <div className="grid grid-cols-2">
         <div className="bg-violet-300 flex flex-col justify-center items-center py-28">
           <div className="avatar">
