@@ -10,10 +10,10 @@ const UserHome = () => {
         <div className="bg-violet-300 flex flex-col justify-center items-center py-28">
           <div className="avatar">
             <div className="w-40 rounded-full">
-              <img src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=1261" />
+              <img src={user?.image} />
             </div>
           </div>
-          <h1 className="text-3xl mt-7">{user.displayName} </h1>
+          <h1 className="text-3xl mt-7">{user?.displayName} </h1>
         </div>
         <div className="bg-yellow-200 p-28">
           <h1 className="text-4xl font-bold mb-5">Your Activities</h1>
