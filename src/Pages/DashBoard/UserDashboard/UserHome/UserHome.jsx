@@ -11,7 +11,7 @@ const UserHome = () => {
           <div className="avatar">
             <div className="w-40 rounded-full">
               {
-                user?.image ? <img src={user?.image} /> : <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" />
+                user?.photoURL ? <img src={user?.photoURL} /> : <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" />
               }
               
             </div>
