@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { AuthContext } from "../../../../Provider/AuthProvider";
+
 const UserHome = () => {
+  const { user } = useContext(AuthContext);
   return (
     <div className="p-10">
       <h1 className="text-3xl font-semibold mb-10">Hi, Welcome Back! </h1>
@@ -9,7 +13,7 @@ const UserHome = () => {
               <img src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=1261" />
             </div>
           </div>
-          <h1 className="text-3xl mt-7">user name </h1>
+          <h1 className="text-3xl mt-7">{user.displayName} </h1>
         </div>
         <div className="bg-yellow-200 p-28">
           <h1 className="text-4xl font-bold mb-5">Your Activities</h1>
