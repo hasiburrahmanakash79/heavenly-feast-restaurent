@@ -50,7 +50,9 @@ const Navbar = () => {
           <div className="tooltip tooltip-left" data-tip={user?.displayName}>
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src={user.photoURL} />
+                {
+                user?.photoURL ? <img src={user?.photoURL} /> : <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" />
+              }
               </div>
             </label>
           </div>
