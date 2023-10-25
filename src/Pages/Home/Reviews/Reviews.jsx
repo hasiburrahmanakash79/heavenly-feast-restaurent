@@ -11,10 +11,11 @@ import "@smastrom/react-rating/style.css";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://heavenly-feast-server.vercel.app/review")
+    fetch("http://localhost:5000/review")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
+        // console.log(data);
       });
   }, []);
   return (

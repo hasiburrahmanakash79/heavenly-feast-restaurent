@@ -35,7 +35,7 @@ const SignUp = () => {
         updateUserInfo(name, photo)
           .then(() => {
             const userInfo = { name: name, email: email, role: "user" };
-            fetch("https://heavenly-feast-server.vercel.app/users", {
+            fetch("http://localhost:5000/users", {
               method: "POST",
               headers: {
                 "content-type": "application/json",

@@ -22,7 +22,7 @@ const FoodDetailsCard = ({ item }) => {
         email: user.email,
         id: _id,
       };
-      fetch("https://heavenly-feast-server.vercel.app/carts", {
+      fetch("http://localhost:5000/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",

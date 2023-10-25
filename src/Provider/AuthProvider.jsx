@@ -47,7 +47,8 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       if (currentUser) {
-        axios.post("https://heavenly-feast-server.vercel.app/jwt", { email: currentUser.email })
+        axios
+          .post("http://localhost:5000/jwt", { email: currentUser.email })
           .then((data) => {
             const token = data.data.token;
             localStorage.setItem("access-token", token);
@@ -56,7 +57,6 @@ const AuthProvider = ({ children }) => {
       } else {
         localStorage.removeItem("access-token");
       }
-      
     });
     return () => {
       return unsubscribe();

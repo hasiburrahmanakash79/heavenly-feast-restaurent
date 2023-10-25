@@ -2,12 +2,10 @@ import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import useMenu from "../../../Hook/useMenu";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import Swal from "sweetalert2";
-import useAxiosSecure from "../../../Hook/useAxiosSecure";
 
 const ManageItems = () => {
   const [menu, , refetch] = useMenu();
-  const [axiosSecure] = useAxiosSecure();
-  const handleDelete = (item) => {
+  const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -16,17 +14,37 @@ const ManageItems = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        axiosSecure.delete(`/menu/${item._id}`).then((res) => {
-          console.log(res.data);
-          if (res.data.deletedCount) {
-            refetch();
-            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+    // }).then((result) => {
+    //   if (result.isConfirmed) {
+    //     axiosSecure.delete(`/menu/${id}`).then((res) => {
+    //       console.log(res.data);
+    //       console.log(id);
+    //       if (res.data.deletedCount == 0) {
+    //         refetch();
+    //         Swal.fire("Deleted!", "Your file has been deleted.", "success");
+    //       }
+    //     });
+    //   }
+    // });
+  }).then((result) => {
+    if (result.isConfirmed) {
+      fetch(`http://localhost:5000/menu/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          refetch();
+          console.log(data);
+          if (data.deletedCount > 0) {
+            Swal.fire(
+              "Deleted!",
+              "User has been deleted.",
+              "success"
+            );
           }
         });
-      }
-    });
+    }
+  });
   };
   return (
     <div className="p-5">
@@ -71,7 +89,7 @@ const ManageItems = () => {
                 </td>
                 <td>
                   <button
-                    onClick={() => handleDelete(item)}
+                    onClick={() => handleDelete(item._id)}
                     className="text-white text-xl bg-red-700 p-3 rounded"
                   >
                     <FaTrashAlt></FaTrashAlt>
