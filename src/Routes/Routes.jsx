@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import PrivateRoute from "../Routes/PrivateRoute"
+import PrivateRoute from "../Routes/PrivateRoute";
 import Main from "../Layouts/Main";
 import Home from "../Pages/Home/Home/Home";
 import Menu from "../Pages/Menu/Menu/Menu";
@@ -21,98 +21,117 @@ import PaymentHistory from "../Pages/DashBoard/UserDashboard/PaymentHistory/Paym
 import Reservation from "../Pages/DashBoard/UserDashboard/Reservation/Reservation";
 import PaymentSuccess from "../Pages/DashBoard/UserDashboard/Payment/Paymentsuccess";
 import PaymentFail from "../Pages/DashBoard/UserDashboard/Payment/PaymentFail";
+import AdminHome from "../Pages/DashBoard/AdminDashboard/AdminHome";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
     children: [
-        {
-            path: '/',
-            element: <Home></Home>
-        },
-        {
-          path: '/menu',
-          element: <Menu></Menu>
-        },
-        {
-          path: '/shop',
-          element: <OurShop></OurShop>
-        },
-        {
-          path: '/addToCart',
-          element: <AddToCart></AddToCart>
-        },
-        {
-          path: '/contact',
-          element: <Contact/>
-        },
-        {
-          path: '/payment/success/:tranId',
-          element: <PaymentSuccess/>
-        },
-        {
-          path: '/payment/fail/:tranId',
-          element: <PaymentFail/>
-        },
-    ]
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/menu",
+        element: <Menu></Menu>,
+      },
+      {
+        path: "/shop",
+        element: <OurShop></OurShop>,
+      },
+      {
+        path: "/addToCart",
+        element: <AddToCart></AddToCart>,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/payment/success/:tranId",
+        element: <PaymentSuccess />,
+      },
+      {
+        path: "/payment/fail/:tranId",
+        element: <PaymentFail />,
+      },
+    ],
   },
   {
-    path: '/dashboard',
-    element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashBoard></DashBoard>
+      </PrivateRoute>
+    ),
     children: [
-      // User DashBoard 
+      // User DashBoard
       {
-        path: 'home',
-        element: <UserHome/>
+        path: "home",
+        element: <UserHome />,
       },
       {
-        path: 'myCart',
-        element: <MyCart/>
+        path: "myCart",
+        element: <MyCart />,
       },
       {
-        path: 'reservation',
-        element: <Reservation/>
+        path: "reservation",
+        element: <Reservation />,
       },
       {
-        path: 'paymentHistory',
-        element: <PaymentHistory/>
+        path: "paymentHistory",
+        element: <PaymentHistory />,
       },
       {
-        path: 'payment/:id',
-        element: <Payment/>
+        path: "payment/:id",
+        element: <Payment />,
       },
-      
+
       {
-        path: 'review',
-        element: <AddReview/>
+        path: "review",
+        element: <AddReview />,
       },
 
       ///Admin Dashboard
       {
-        path: 'allUser',
-        element: <AdminRoute><AllUsers/></AdminRoute>
+        path: "allUser",
+        element: (
+          <AdminRoute>
+            <AllUsers />
+          </AdminRoute>
+        ),
       },
       {
-        path: 'addItem',
-        element: <AdminRoute><AddItems/></AdminRoute>
+        path: "adminHome",
+        element: (
+          <AdminRoute>
+            <AdminHome />
+          </AdminRoute>
+        ),
       },
       {
-        path: 'manageItem',
-        element: <ManageItems/>
-      }
-    ]
+        path: "addItem",
+        element: (
+          <AdminRoute>
+            <AddItems />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "manageItem",
+        element: <ManageItems />,
+      },
+    ],
   },
   {
-    path: '/login',
-    element: <Login></Login>
+    path: "/login",
+    element: <Login></Login>,
   },
   {
-    path: '/signUp',
-    element: <SignUp></SignUp>
-  }
-  
+    path: "/signUp",
+    element: <SignUp></SignUp>,
+  },
 ]);
-
 
 export default router;
