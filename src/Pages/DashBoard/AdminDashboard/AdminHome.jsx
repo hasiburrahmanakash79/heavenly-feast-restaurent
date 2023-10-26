@@ -26,9 +26,9 @@ const AdminHome = () => {
         <div className="bg-yellow-200 p-28">
           <h1 className="text-4xl font-bold mb-5">Heavenly Feast</h1>
           <p className="text-2xl">Total Menu: {menu.length}</p>
-          <p className="text-2xl">Total User: {user.length}</p>
-          <p className="text-2xl">Bookings: 1</p>
-          <p className="text-2xl">Bookings: 1</p>
+          <p className="text-2xl">Total User: 51 {user.length}</p>
+          <p className="text-2xl">Total Bookings: 456</p>
+          <p className="text-2xl">Total Order: 5654</p>
         </div>
       </div>
     </div>
