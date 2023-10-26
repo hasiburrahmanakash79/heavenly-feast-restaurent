@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import useMenu from "../../../Hook/useMenu";
 
 const AdminHome = () => {
   const { user } = useContext(AuthContext);
+  const [menu] = useMenu()
   return (
     <div className="p-10">
       <h1 className="text-3xl font-semibold mb-10">
@@ -22,9 +24,9 @@ const AdminHome = () => {
           <h1 className="text-3xl mt-7">{user?.displayName} </h1>
         </div>
         <div className="bg-yellow-200 p-28">
-          <h1 className="text-4xl font-bold mb-5">Your Activities</h1>
-          <p className="text-2xl">Orders: 6</p>
-          <p className="text-2xl">Reviews: 2</p>
+          <h1 className="text-4xl font-bold mb-5">Heavenly Feast</h1>
+          <p className="text-2xl">Total Menu: {menu.length}</p>
+          <p className="text-2xl">Total User: {user.length}</p>
           <p className="text-2xl">Bookings: 1</p>
           <p className="text-2xl">Bookings: 1</p>
         </div>
