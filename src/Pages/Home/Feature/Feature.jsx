@@ -15,7 +15,7 @@ const Feature = () => {
           <div>
             <h1 className="text-5xl font-bold my-3">Why Heavenly Feast?</h1>
             <p>
-            Indulge in a culinary journey like no other at Heavenly Feast. Our restaurant is a haven for food lovers seeking a divine dining experience. With an eclectic menu that fuses global flavors with a touch of elegance, every dish is a masterpiece. From savory appetizers to delectable desserts, our chefs craft each plate with passion and precision. Immerse yourself in the warm ambiance, impeccable service, and heavenly flavors that make every visit to Heavenly Feast an unforgettable feast for the senses. Join us and savor the taste of paradise on every plate.
+            Indulge in a culinary journey like no other at Heavenly Feast. Our restaurant is a haven for food lovers seeking a divine dining experience. With an eclectic menu that fuses global flavors with a touch of elegance, every dish is a masterpiece. From savory appetizers to delectable desserts, our chefs craft each plate with passion and precision. Join us and savor the taste of paradise on every plate.
             </p>
             <button className="btn btn-outline btn-warning border-0 border-b-4 mt-3 ">
               Order now
