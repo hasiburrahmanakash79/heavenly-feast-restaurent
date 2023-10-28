@@ -29,10 +29,8 @@ const AddItems = () => {
         const imgURL = imageResponse.data.display_url;
         const {name, price,category, recipe} = data;
         const newItem = {name, price: parseInt(price),category, recipe, image: imgURL}
-        console.log(newItem);
         axiosSecure.post('/menu', newItem)
         .then(data => {
-          console.log("after post:" , data.data);
           if(data.data.insertedId){
             Swal.fire({
               showConfirmButton: false,
