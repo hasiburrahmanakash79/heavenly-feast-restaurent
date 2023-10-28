@@ -110,16 +110,6 @@ const AddItems = () => {
           ></textarea>
         </div>
         <div>
-          <label className="label">
-            <span className="label-text">Recipe Details</span>
-          </label>
-          <textarea
-          {...register("recipe", { required: true })}
-            className="rounded-lg w-full p-4"
-            rows="5"
-          ></textarea>
-        </div>
-        <div>
           <input type="file" {...register("image", { required: true })} className="file-input w-full max-w-xs my-3" />
         </div>
         <div>
