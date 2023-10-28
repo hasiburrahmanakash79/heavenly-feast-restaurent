@@ -24,6 +24,7 @@ const UserHome = () => {
           <p className="text-2xl">Reviews: 2</p>
           <p className="text-2xl">Bookings: 1</p>
           <p className="text-2xl">Bookings: 1</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque voluptas modi nostrum quae ex et, ad architecto consequatur perspiciatis eius numquam id. A atque mollitia impedit, nam expedita quibusdam vero molestias obcaecati asperiores? Perspiciatis, eligendi! Magnam expedita hic fugit mollitia eius. Eligendi blanditiis nostrum quas assumenda fugit molestiae, accusantium natus incidunt corporis, veritatis excepturi odit error, temporibus sit unde! Consequuntur animi sed praesentium nulla fuga odio quos magni quibusdam, temporibus tenetur aperiam dolor reiciendis, sunt est voluptatibus corrupti maxime sit ratione repellendus ad! Mollitia sint ducimus aspernatur, labore sit ut et dolore quaerat odit eius nesciunt fugit voluptatibus ullam.</p>
         </div>
       </div>
     </div>
