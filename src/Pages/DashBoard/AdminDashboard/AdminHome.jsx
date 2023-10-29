@@ -30,6 +30,7 @@ const AdminHome = () => {
           <p className="text-2xl">Total Bookings: 456</p>
           <p className="text-2xl">Total Order: 5654</p>
           <p className="text-2xl">Total staff: 23</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere, necessitatibus sapiente ipsum eaque rem sunt? Ipsam, nulla. Eveniet soluta accusantium, consectetur eum facere neque repellat illum atque alias, possimus iusto! Praesentium quod natus voluptatibus itaque aspernatur minus dolorem recusandae in reprehenderit velit. Nesciunt reprehenderit, nobis maxime dolorum beatae excepturi praesentium?</p>
         </div>
       </div>
     </div>
