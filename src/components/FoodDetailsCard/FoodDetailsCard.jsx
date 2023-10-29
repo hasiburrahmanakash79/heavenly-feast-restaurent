@@ -31,7 +31,6 @@ const FoodDetailsCard = ({ item }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.insertedId) {
             refetch();
             Swal.fire({

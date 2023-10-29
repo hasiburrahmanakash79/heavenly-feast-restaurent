@@ -17,8 +17,6 @@ const ManageItems = () => {
     // }).then((result) => {
     //   if (result.isConfirmed) {
     //     axiosSecure.delete(`/menu/${id}`).then((res) => {
-    //       console.log(res.data);
-    //       console.log(id);
     //       if (res.data.deletedCount == 0) {
     //         refetch();
     //         Swal.fire("Deleted!", "Your file has been deleted.", "success");
