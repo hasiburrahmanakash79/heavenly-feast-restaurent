@@ -24,7 +24,6 @@ const SignUp = () => {
     const email = form.email.value;
     const password = form.password.value;
     const photo = form.photo.value;
-    console.log(name, email, password, photo);
 
     signUpUser(email, password)
       .then((result) => {
@@ -44,7 +43,6 @@ const SignUp = () => {
             })
               .then((res) => res.json())
               .then((data) => {
-                console.log(data);
                 if (data.insertedId) {
                   navigate(from, { replace: true });
                   Swal.fire({

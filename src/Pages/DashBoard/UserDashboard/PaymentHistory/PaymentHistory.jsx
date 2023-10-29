@@ -3,7 +3,6 @@ import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 
 const PaymentHistory = () => {
   const [history] = useHistory();
-  console.log(history);
   return (
     <div className="p-10">
       <div>
