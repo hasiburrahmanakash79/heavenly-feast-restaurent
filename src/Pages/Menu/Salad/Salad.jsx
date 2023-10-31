@@ -26,7 +26,7 @@ const Salad = () => {
       <div className="text-center">
         <Link to="/shop">
           <button className="btn btn-outline  border-0 border-b-4 mb-7 ">
-            Order Your Favorite Foods
+            Order Salad
           </button>
         </Link>
       </div>
