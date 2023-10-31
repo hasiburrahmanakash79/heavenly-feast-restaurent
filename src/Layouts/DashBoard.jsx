@@ -114,7 +114,7 @@ const DashBoard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/">
+            <NavLink to="/contact">
               <FaMobileAlt></FaMobileAlt> Contact
             </NavLink>
           </li>
