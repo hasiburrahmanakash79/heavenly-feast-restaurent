@@ -1,9 +1,14 @@
 import contactLottie from "../../assets/contact/contact.json";
 import Lottie from "lottie-react";
+import SectionTitle from "../../components/SectionTitle/SectionTitle";
 
 const Contact = () => {
   return (
     <div className="p-5 py-20 container mx-auto md:grid grid-cols-2">
+      <SectionTitle
+        subTitle={"Say hi!!"}
+        title={"Contact"}
+      ></SectionTitle>
       <div className="">
         <Lottie
           animationData={contactLottie}
