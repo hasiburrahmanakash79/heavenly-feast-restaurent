@@ -22,6 +22,7 @@ import Reservation from "../Pages/DashBoard/UserDashboard/Reservation/Reservatio
 import PaymentSuccess from "../Pages/DashBoard/UserDashboard/Payment/Paymentsuccess";
 import PaymentFail from "../Pages/DashBoard/UserDashboard/Payment/PaymentFail";
 import AdminHome from "../Pages/DashBoard/AdminDashboard/AdminHome";
+import ManageBooking from "../Pages/DashBoard/AdminDashboard/ManageBooking";
 
 const router = createBrowserRouter([
   {
@@ -115,6 +116,14 @@ const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <AddItems />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "booking",
+        element: (
+          <AdminRoute>
+            <ManageBooking />
           </AdminRoute>
         ),
       },
