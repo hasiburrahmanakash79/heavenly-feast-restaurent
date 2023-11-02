@@ -16,7 +16,14 @@ const Booking = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        
+        if(data.insertedId){
+          Swal.fire({
+            showConfirmButton: false,
+            timer: 2000,
+            title: "Item added Successful",
+            icon: "success",
+          });
+        }
       });
   };
 
