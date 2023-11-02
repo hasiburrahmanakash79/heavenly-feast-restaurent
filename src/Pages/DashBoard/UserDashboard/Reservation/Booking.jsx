@@ -1,10 +1,23 @@
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const Booking = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
+    fetch("http://localhost:5000/booking", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        
+      });
   };
 
   return (
