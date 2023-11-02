@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../../../Provider/AuthProvider";
 
 const Booking = () => {
+  const {user} = useContext(AuthContext)
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
@@ -42,6 +45,7 @@ const Booking = () => {
               type="text"
               {...register("name", { required: true })}
               placeholder="Type here"
+              defaultValue={user.displayName}
               className="input w-full"
             />
           </div>
@@ -63,6 +67,7 @@ const Booking = () => {
             <input
               {...register("email", { required: true })}
               type="email"
+              defaultValue={user.email}
               placeholder="Type here"
               className="input w-full"
             />
