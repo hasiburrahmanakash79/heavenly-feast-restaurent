@@ -21,8 +21,6 @@ const ManageBooking = () => {
     fetchData();
   }, []);
 
-  console.log(booking);
-
   return (
     <div className="p-5">
       <SectionTitle title={"manage Booking"}></SectionTitle>
@@ -38,6 +36,7 @@ const ManageBooking = () => {
               <th>Date</th>
               <th>Time</th>
               <th>Person</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -50,6 +49,9 @@ const ManageBooking = () => {
                 <td>{bookTable?.date}</td>
                 <td>{bookTable?.time}</td>
                 <td>{bookTable?.person} person</td>
+                <td>
+                  <button className="btn btn-primary btn-sm">delete</button>
+                </td>
               </tr>
             ))}
           </tbody>
