@@ -36,7 +36,7 @@ const ManageBooking = () => {
               <th>Date</th>
               <th>Time</th>
               <th>Person</th>
-              <th>Delete</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
