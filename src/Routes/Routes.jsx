@@ -23,6 +23,7 @@ import PaymentSuccess from "../Pages/DashBoard/UserDashboard/Payment/Paymentsucc
 import PaymentFail from "../Pages/DashBoard/UserDashboard/Payment/PaymentFail";
 import AdminHome from "../Pages/DashBoard/AdminDashboard/AdminHome";
 import ManageBooking from "../Pages/DashBoard/AdminDashboard/ManageBooking";
+import MyBooking from "../Pages/DashBoard/UserDashboard/MyBooking/MyBooking";
 
 const router = createBrowserRouter([
   {
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
       {
         path: "paymentHistory",
         element: <PaymentHistory />,
+      },
+      {
+        path: "booking",
+        element: <MyBooking />,
       },
       {
         path: "payment/:id",
