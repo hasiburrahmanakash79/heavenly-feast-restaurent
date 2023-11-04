@@ -90,6 +90,11 @@ const DashBoard = () => {
                 </NavLink>
               </li>
               <li>
+                <NavLink to="/dashboard/booking">
+                  <FaCalendarAlt></FaCalendarAlt> My Booking
+                </NavLink>
+              </li>
+              <li>
                 <NavLink to="/dashboard/review">
                   <FaStar></FaStar> Add Review
                 </NavLink>
