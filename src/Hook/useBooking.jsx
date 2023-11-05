@@ -12,7 +12,7 @@ const useBooking = () => {
         queryKey: ['booking', user?.email],
         enabled: !loading,
         queryFn: async () =>{
-            const res = await axiosSecure(`/booking?email=${user?.email}`)
+            const res = await axiosSecure(`/booking/?email=${user?.email}`)
             return res.data;
         },
       })
