@@ -76,6 +76,9 @@ const AllUsers = () => {
           </tbody>
         </table>
       </div>
+      <div>
+        <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos sequi eaque animi magnam provident, error fuga. Beatae sint praesentium ducimus incidunt illo. Suscipit saepe facilis recusandae earum. Quasi esse qui quod, repellendus eaque debitis?</h1>
+      </div>
     </div>
   );
 };
