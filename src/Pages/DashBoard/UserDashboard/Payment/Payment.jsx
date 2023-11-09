@@ -16,7 +16,7 @@ const Payment = () => {
 
   const onSubmit = (data) => {
     data.itemsID = id
-    fetch('http://localhost:5000/order', {
+    fetch('https://heavenly-feast-server.vercel.app/order', {
       method: 'POST',
       headers: {
         "content-type" : "application/json"

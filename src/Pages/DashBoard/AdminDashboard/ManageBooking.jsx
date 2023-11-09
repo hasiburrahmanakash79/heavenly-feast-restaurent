@@ -7,7 +7,7 @@ const ManageBooking = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/booking");
+        const response = await fetch("https://heavenly-feast-server.vercel.app/booking");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }

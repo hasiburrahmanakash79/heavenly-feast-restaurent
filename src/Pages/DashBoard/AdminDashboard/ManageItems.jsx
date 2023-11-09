@@ -26,7 +26,7 @@ const ManageItems = () => {
       // });
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/menu/${id}`, {
+        fetch(`https://heavenly-feast-server.vercel.app/menu/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
