@@ -3,6 +3,7 @@ import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 
 const MyBooking = () => {
   const [booking] = useBooking();
+  console.log(booking);
   return (
     <div className="p-5">
       <SectionTitle
@@ -17,8 +18,10 @@ const MyBooking = () => {
               <th>No.</th>
               <th>Name</th>
               <th>Email</th>
-              <th>Role</th>
-              <th>Action</th>
+              <th>Person</th>
+              <th>Phone</th>
+              <th>Time</th>
+              <th>Date</th>
             </tr>
           </thead>
           <tbody>
@@ -27,8 +30,10 @@ const MyBooking = () => {
                 <th>{index + 1}</th>
                 <td>{booked?.name}</td>
                 <td>{booked?.email}</td>
-                <td>wewew</td>
-                <td>ewwew</td>
+                <td>{booked?.person}</td>
+                <td>{booked?.phone}</td>
+                <td>{booked?.time}</td>
+                <td>{booked?.date}</td>
               </tr>
             ))}
           </tbody>
