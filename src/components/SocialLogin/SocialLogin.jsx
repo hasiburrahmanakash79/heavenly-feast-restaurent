@@ -44,7 +44,7 @@ const SocialLogin = () => {
   return (
     <div>
       <button onClick={() => handleGoogleLogin()}>
-        <img src="https://i.ibb.co/KjQdbSD/image.png" alt="" className="w-6" />
+        <img src="https://logos-marques.com/wp-content/uploads/2021/03/Nouveau-logo-Google.png" alt="" className="w-20" />
       </button>
     </div>
   );
