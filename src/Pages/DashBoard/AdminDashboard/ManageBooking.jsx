@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import Swal from "sweetalert2";
 
 const ManageBooking = () => {
   const [booking, setBooking] = useState([]);
@@ -12,6 +13,42 @@ const ManageBooking = () => {
         console.log(data);
       });
   }, []);
+
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+      // }).then((result) => {
+      //   if (result.isConfirmed) {
+      //     axiosSecure.delete(`/menu/${id}`).then((res) => {
+      //       if (res.data.deletedCount == 0) {
+      //         refetch();
+      //         Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      //       }
+      //     });
+      //   }
+      // });
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/booking/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "User has been deleted.", "success");
+            }
+          });
+      }
+    });
+  };
 
   return (
     <div className="p-5">
@@ -41,7 +78,7 @@ const ManageBooking = () => {
                 <td>{bookTable?.time}</td>
                 <td>{bookTable?.person} person</td>
                 <td>
-                  <button className="btn btn-primary btn-sm">delete</button>
+                  <button onClick={() => handleDelete(bookTable._id)} className="btn btn-primary btn-sm">delete</button>
                 </td>
               </tr>
             ))}
