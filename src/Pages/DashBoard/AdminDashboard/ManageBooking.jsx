@@ -24,16 +24,6 @@ const ManageBooking = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
-      // }).then((result) => {
-      //   if (result.isConfirmed) {
-      //     axiosSecure.delete(`/menu/${id}`).then((res) => {
-      //       if (res.data.deletedCount == 0) {
-      //         refetch();
-      //         Swal.fire("Deleted!", "Your file has been deleted.", "success");
-      //       }
-      //     });
-      //   }
-      // });
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(`http://localhost:5000/booking/${id}`, {
@@ -41,7 +31,6 @@ const ManageBooking = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "User has been deleted.", "success");
             }
