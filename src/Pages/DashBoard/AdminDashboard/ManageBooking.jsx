@@ -5,7 +5,7 @@ const ManageBooking = () => {
   const [booking, setBooking] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/booking")
+    fetch("https://heavenly-feast-server.vercel.app/booking")
       .then((res) => res.json())
       .then((data) => {
         setBooking(data);
