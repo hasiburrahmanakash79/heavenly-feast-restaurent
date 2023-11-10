@@ -18,7 +18,6 @@ const ManageBooking = () => {
       <SectionTitle title={"manage Booking"}></SectionTitle>
       <div className="overflow-x-auto">
         <table className="table w-full">
-          {/* head */}
           <thead>
             <tr>
               <th>No.</th>
