@@ -6,10 +6,7 @@ const MyBooking = () => {
   console.log(booking);
   return (
     <div className="p-5">
-      <SectionTitle
-        subTitle={"Happy user"}
-        title={"manage user"}
-      ></SectionTitle>
+      
       <div className="overflow-x-auto">
         <table className="table w-full">
           {/* head */}
