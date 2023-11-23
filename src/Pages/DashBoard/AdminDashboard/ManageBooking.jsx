@@ -46,7 +46,14 @@ const ManageBooking = () => {
         <table className="table w-full">
           <thead>
             <tr>
-              
+              <th>No.</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Person</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
