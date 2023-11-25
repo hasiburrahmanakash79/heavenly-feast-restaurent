@@ -104,8 +104,7 @@ const OnlineService = () => {
               appetizers to delectable desserts, our chefs craft each plate with
               passion and precision. Immerse yourself in the warm ambiance,
               impeccable service, and heavenly flavors that make every visit to
-              Heavenly Feast an unforgettable feast for the senses. Join us and
-              savor the taste of paradise on every plate.
+              Heavenly Feast an unforgettable feast for the senses.
             </p>
           </div>
         </div>
