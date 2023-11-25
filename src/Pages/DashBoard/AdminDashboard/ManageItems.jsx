@@ -14,16 +14,6 @@ const ManageItems = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
-      // }).then((result) => {
-      //   if (result.isConfirmed) {
-      //     axiosSecure.delete(`/menu/${id}`).then((res) => {
-      //       if (res.data.deletedCount == 0) {
-      //         refetch();
-      //         Swal.fire("Deleted!", "Your file has been deleted.", "success");
-      //       }
-      //     });
-      //   }
-      // });
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(`https://heavenly-feast-server.vercel.app/menu/${id}`, {
