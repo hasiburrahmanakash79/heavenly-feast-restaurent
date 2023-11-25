@@ -28,7 +28,7 @@ const AdminHome = () => {
           <p className="text-2xl">Total Menu: {menu.length}</p>
           <p className="text-2xl">Total User: 51 {user.length}</p>
           <p className="text-2xl">Total Bookings: 456</p>
-          <p className="text-2xl">Total Order: 5654</p>
+          <p className="text-2xl">Total Order: 5500+</p>
           <p className="text-2xl">Total staff: 23</p>
         </div>
       </div>
