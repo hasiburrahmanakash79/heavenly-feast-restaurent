@@ -9,8 +9,8 @@ const SingleMenu = ({ item }) => {
         </div>
       </div>
       <div className="md:col-span-4 col-span-2">
-        <h1>{name}</h1>
-        <p>{recipe}</p>
+        <h1>Item name: {name}</h1>
+        <p>Recipe: {recipe}</p>
       </div>
       <p className="border p-2 rounded-lg col-span-1">Price: ${price}</p>
     </div>
