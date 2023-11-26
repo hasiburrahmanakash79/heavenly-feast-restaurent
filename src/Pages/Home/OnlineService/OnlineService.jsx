@@ -22,10 +22,7 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 const OnlineService = () => {
   return (
     <section className="mb-10">
-      <SectionTitle
-        subTitle={"From 11:00am to 10:00pm"}
-        title={"Order Online"}
-      ></SectionTitle>
+      
       <Swiper
         slidesPerView={5}
         spaceBetween={30}
