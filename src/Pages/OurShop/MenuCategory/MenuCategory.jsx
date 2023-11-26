@@ -54,11 +54,7 @@ const MenuCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid md:grid-cols-4 gap-3">
-            {drinks.map((item) => (
-              <FoodDetailsCard key={item._id} item={item}></FoodDetailsCard>
-            ))}
-          </div>
+          
         </TabPanel>
       </Tabs>
     </div>
