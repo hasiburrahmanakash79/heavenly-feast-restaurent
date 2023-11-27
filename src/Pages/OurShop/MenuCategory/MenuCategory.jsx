@@ -17,13 +17,7 @@ const MenuCategory = () => {
     <div className="my-10 text-center container mx-auto">
       <SectionTitle title={"All menu"} subTitle={"Search your favorite items"}></SectionTitle>
       <Tabs>
-        <TabList>
-          <Tab>Salad</Tab>
-          <Tab>Pizza</Tab>
-          <Tab>Soups</Tab>
-          <Tab>Desserts</Tab>
-          <Tab>Drinks</Tab>
-        </TabList>
+        
 
         <TabPanel>
           <div className="grid md:grid-cols-4 gap-3">
