@@ -72,7 +72,18 @@ const OnlineService = () => {
             Thai Soup
           </h1>
         </SwiperSlide>
-        
+        <SwiperSlide>
+          <img src={slider7} alt="" />
+          <h1 className="text-center text-lg md:text-3xl font-semibold text-white -mt-8 md:-mt-16">
+            Chicken
+          </h1>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={slider8} alt="" />
+          <h1 className="text-center text-lg md:text-3xl font-semibold text-white -mt-8 md:-mt-16">
+            Burger
+          </h1>
+        </SwiperSlide>
         <SwiperSlide>
           <img src={slider9} alt="" />
           <h1 className="text-center text-lg md:text-3xl font-semibold text-white -mt-8 md:-mt-16">
