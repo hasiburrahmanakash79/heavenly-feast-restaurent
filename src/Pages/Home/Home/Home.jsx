@@ -9,13 +9,7 @@ const Home = () => {
   UseTitle("Home");
   return (
     <div>
-      <Banner></Banner>
-      <div className="container mx-auto">
-        <OnlineService></OnlineService>
-        <FavoriteMenu></FavoriteMenu>
-        <Reviews></Reviews>
-      </div>
-      <Feature></Feature>
+      
     </div>
   );
 };
