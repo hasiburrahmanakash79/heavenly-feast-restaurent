@@ -4,7 +4,12 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const SocialLogin = () => {
+  const { googleSignIn } = useContext(AuthContext);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   // googleLogin
   const handleGoogleLogin = () => {
